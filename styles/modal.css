@@ -1,0 +1,181 @@
+
+dialog.modal {
+    border: none;
+    background: transparent;
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+}
+
+
+dialog.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.model-content {
+    background: white;
+    width: 350px;
+    padding: 30px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px !important;
+    gap: 24px;
+}
+
+/* .confirm {
+    border-radius: 50%;
+    background-color: rgba(0, 128, 0, 0.202);
+    width: 70px;
+    height: 70px;
+} */
+
+.delete {
+    border-radius: 50%;
+    background-color: rgba(251, 137, 137, 0.449);
+    width: 70px;
+    height: 70px;
+}
+
+.delete img{
+    padding: 10px;
+}
+
+.cancel {
+    border-radius: 50%;
+    background-color: rgba(137, 164, 251, 0.449)!important;
+    width: 70px;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cancel img {
+    width: 36px;
+}
+
+.submit{
+     border-radius: 50%;
+    background-color: rgba(137, 251, 152, 0.449)!important;
+    width: 80px;
+    height: 80px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.save{
+     border-radius: 50%;
+    background-color: rgb(18, 62, 205)!important;
+    width: 80px;
+    height: 80px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.save img{
+    filter:invert(1);
+}
+
+.model-message {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 24px;
+    /* gap: 20px; */
+}
+
+.model-message h2 {
+    font-size: medium;
+    padding: 4px;
+    margin-bottom: 20px;
+}
+
+.model-message p {
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.571);
+    font-weight: 600;
+}
+
+.model-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.cancel-btn,
+.req-btn,
+.del-btn,
+.save-btn,
+.sub-btn,
+.view-btn {
+    height: 40px;
+    padding: 0 24px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.cancel-btn {
+    background: #ffffff;
+    border: 1px solid #b4c6ef;
+    color: #1e3a8a;
+}
+
+.cancel-btn:hover {
+    background-color: #f0f4ff;
+    border-color: #93c5fd;
+}
+
+.save-btn,
+.sub-btn,
+.view-btn {
+    background-color: #2926dc;
+    color: white;
+    border: none;
+}
+
+
+
+.req-btn {
+    background-color: #16a34a;
+    color: white;
+    border: none;
+}
+
+
+.del-btn {
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+.del-btn:hover {
+    background-color: #dc2626;
+}
+
+#cancel-modal-confirm {
+    background-color: #2926dc;
+}
+
+
+.model-btns button img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+}
+
+button:hover{
+    filter: brightness(1.09);
+}

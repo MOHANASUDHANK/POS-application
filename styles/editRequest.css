@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+body {
+    background-color: rgb(238, 242, 252);
+}
+
+.card {
+    border-radius: 8px;
+    border: 1px solid rgb(227, 227, 245);
+    background: #ffff;
+}
+
+.request-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 10px;
+    gap:10px;
+    height: 100vh; 
+    overflow: hidden; 
+}
+
+.req-info {
+    padding: 16px;
+}
+
+.req-header {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 16px;
+}
+
+.input-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 32px;
+    row-gap: 16px;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-field label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.required {
+    color: #ef4444;
+    margin-left: 4px;
+}
+
+.input-field input,
+.items-table input,
+.items-table select,
+.items-table textarea {
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #334155;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 10px 14px;
+    /* outline: none; */
+    /* height: 42px; */
+}
+
+
+.disabled-field input {
+    background-color: #f8fafc;
+    color: #64748b;
+    border-color: #e2e8f0;
+    cursor: not-allowed;
+}
+
+.items-panel {
+    padding: 16px;
+    display: flex; 
+    flex-direction: column; 
+    flex: 1; 
+    min-height: 0;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.panel-header .left h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.sub {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-top: 4px;
+}
+
+.add-item-btn {
+    background-color: #1d4ed8;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.add-item-btn:hover {
+    background-color: #1e40af;
+}
+
+.table-responsive {
+    width: 100%;
+    flex: 1; 
+    overflow-y: auto;
+    min-height: 0; 
+    margin-bottom: 16px;
+}
+
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.items-table th {
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 14px 16px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.items-table td {
+    padding: 12px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.action-col {
+    width: 80px;
+    text-align: center;
+}
+
+.items-table th.action-col {
+    text-align: center;
+}
+
+.buttons-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 24px;
+}
+
+.cancel-btn,
+.save-btn,
+.req-btn {
+    height: 40px;
+    padding: 0 24px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.cancel-btn {
+    background: #ffffff;
+    border: 1px solid #b4c6ef;
+    color: #1e3a8a;
+}
+
+
+.save-btn {
+    background: #1d4ed8;
+    border: none;
+    color: #ffffff;
+}
+
+.save-btn:hover {
+    background: #1e40af;
+}
+
+.req-btn {
+    background-color: #16a34a;
+    border: none;
+    color: #ffffff;
+}
+
+.req-btn:hover {
+    background-color: #15803d;
+}
+
+.buttons-row button img {
+    height: 16px;
+    width: 16px;
+    filter: brightness(0) invert(1);
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-btn img {
+    height: 20px;
+    width: auto;
+}
+
+.select-item {
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 14px;
+    padding-right: 40px !important;
+}
+
+::placeholder {
+    color: #94a3b8;
+}

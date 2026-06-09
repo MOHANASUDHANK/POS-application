@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../styles/billing.css">
+    <link rel="stylesheet" href="../styles/sidePanel.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="main-logo">
+            <img src="../asserts\POS - 01 Register Page.png">
+            <div class="logo-name">POS Cafe</div>
+        </div>
+        <div class="sidebar-content">
+            <ul class="nav-menu">
+                <a href="billing.html" >
+                    <li class="active-tab">Billing</li>
+                </a>
+                <a href="Inventory.html">
+                    <li>Inventory</li>
+                </a>
+                <a href="itemRequest.html">
+                    <li>Item Request</li>
+                </a>
+                <a href="report.html">
+                    <li>Sales Report</li>
+                </a>
+                <li>Settings</li>
+                <li>Users</li>
+            </ul>
+        </div>
+        <div class="user-detail">
+            <div class="user-logo">
+                <img
+                    src="https://www.bing.com/th/id/OIP.mb-TeazydHy54flygpdclwHaHa?w=193&h=193&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2">
+                <span class="username">Administrator</span>
+            </div>
+        </div>
+    </aside>
+    <div class="billing-container">
+        <div class="header-container">
+            <div class="header-left-group">
+                <div class="header-left">
+                    <div class="main-header">☰ Current Bill</div>
+                </div>
+                <div class="amount-container">
+                    <div class="amount-text">Total Amount</div>
+                    <div class="amount-value" id="total-amount">$0.00</div>
+                </div>
+            </div>
+            <div class="menu-options">
+                <div class="search-wrapper">
+                    <img src="../asserts/search.jpg" alt="">
+                    <input id="search-bar" type="text" placeholder="Search menu items...">
+                </div>
+
+                <div class="view-toggle">
+                    <input type="radio" id="grid-view" name="view-option" checked>
+                    <label for="grid-view" class="toggle-btn">
+                        <span class="material-symbols-outlined">grid_view</span>
+                    </label>
+
+                    <input type="radio" id="list-view" name="view-option">
+                    <label for="list-view" class="toggle-btn">
+                        <span class="material-symbols-outlined">format_list_bulleted</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <div class="left-panel">
+                <div class="card bill-details-panel">
+                    <div class="bill-header-row">
+                        <span class="header-col item-col">Item</span>
+                        <span class="header-col qty-col">Qty</span>
+                        <span class="header-col price-col">Unit Price</span>
+                        <span class="header-col total-col">Total</span>
+                    </div>
+
+                    <div class="bill-items-container">
+                        <div class="empty-bill-state" style="display: none;">
+                            <h3 class="empty-state-title">No items added yet</h3>
+                            <p class="empty-state-subtitle">Select items from the menu to add to the bill</p>
+                        </div>
+                        <div class="bill-items-list">
+                            <div class="bill-row">
+                                <div class="bill-item-info">
+                                    <img src="../asserts/barley_water.png" class="bill-item-image">
+                                    <span class="bill-item-name">Barley Water</span>
+                                </div>
+                                <div class="bill-item-quantity">2</div>
+                                <div class="bill-item-price">$15</div>
+                                <div class="bill-item-total">$30</div>
+                                <div class="bill-item-action">
+                                    <button class="del-btn"><img
+                                            src="../asserts/delete_18dp_1F1F1F_FILL0_wght400_GRAD0_opsz20.png"></button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="bill-instruction">
+                        <p>Click item to create billing entry. If item already exits,quantity will increase.</p>
+                        <p>Cancel items removes the last biled item. Delete all clears local data.</p>
+                        <p>Main menu will redirect to menu page.</p>
+                    </div>
+
+                    <div class="price-amendment-panel" style="display: none;">
+                        <div class="price-amendment-header">
+
+                            <span>Price Amendment</span>
+                        </div>
+
+                        <div class="amendment-row">
+                            <span class="amendment-label">Total Amount</span>
+                            <span class="amendment-value">$0</span>
+                        </div>
+                        <div class="amendment-row">
+                            <span class="amendment-label">GST Amount (7%)</span>
+                            <span class="amendment-value">$0</span>
+                        </div>
+
+                        <div class="amendment-row payable-row">
+                            <span class="amendment-label large-label">Payable</span>
+                            <span class="amendment-value purple-value large-value">$0</span>
+                        </div>
+
+                        <div class="amendment-row tender-row">
+                            <span class="amendment-label">Tender</span>
+                            <div class="tender-input-wrapper">
+                                <span class="tender-prefix">$</span>
+                                <input type="text" value="0" class="tender-input">
+                            </div>
+                        </div>
+
+                        <div class="amendment-row balance-box">
+                            <span class="amendment-label balance-label">Change (Balance)</span>
+                            <span class="amendment-value balance-value">$0.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bill-calculator">
+                    <div class="calculator-top-row">
+                        <div class="input-item-no-getter">
+                            <label class="input-item-no-getter-box-label">Item Number</label>
+                            <div class="input-box-no">
+                                <input type="text" placeholder="Scan / Enter item number">
+                            </div>
+                        </div>
+                        <div class="input-item-quantity-getter">
+                            <label class="input-item-quantity-getter-box-label">Quantity</label>
+                            <div class="quantity-calculator-container">
+                                <div class="quantity-calculator">
+                                    <button class="quantity-subtractor">-</button>
+                                    <div class="quantity-display">1</div>
+                                    <button class="quantity-adder">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="add-button-wrapper">
+                            <button class="action-btn add-btn">Add</button>
+                        </div>
+                    </div>
+
+                    <div class="calculator-bottom-row">
+                        <div class="table-info">
+                            <div class="table-no">
+                                <label>Table No</label>
+                                <input type="text" placeholder="Enter table no">
+                            </div>
+                            <div class="table-cover">
+                                <label>No of cover</label>
+                                <input type="text" placeholder="Enter no of cover">
+                            </div>
+                        </div>
+                        <div class="numpad">
+                            <button class="numpad-btn">7</button>
+                            <button class="numpad-btn">8</button>
+                            <button class="numpad-btn">9</button>
+                            <button class="numpad-btn">4</button>
+                            <button class="numpad-btn">5</button>
+                            <button class="numpad-btn">6</button>
+                            <button class="numpad-btn">1</button>
+                            <button class="numpad-btn">2</button>
+                            <button class="numpad-btn">3</button>
+                            <button class="numpad-btn">0</button>
+                            <button class="numpad-btn">.</button>
+                            <button class="numpad-btn">C </button>
+                        </div>
+                        <div class="input-field-functions">
+                            <button class="action-btn ac-btn">AC</button>
+                            <button class="action-btn clear-btn">Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card category-panel" id="category-panel">
+                <button class="category-btn" data-category="Beverage" >
+                    <img src="../asserts/icons8-milkshake-50.png">
+                    <span>Beverage</span>
+                </button>
+                <button class="category-btn" data-category="Steamed Bun">
+                    <img src="../asserts/icons8-dumpling-24.png">
+                    <span>Steamed Bun</span>
+                </button>
+                <button class="category-btn" data-category="Steamed Timsum">
+                    <img src="../asserts/icons8-rice-cooker-60.png">
+                    <span>Steamed Timsum</span>
+                </button>
+                <button class="category-btn" data-category="Deep Fry Timsum">
+                    <img src="../asserts/Deep_fry.png">
+                    <span>Deep Fry Timsum</span>
+                </button>
+                <button class="category-btn" data-category="Bake">
+                    <img src="../asserts/icons8-bake-50.png">
+                    <span>Bake</span>
+                </button>
+                <button class="category-btn" data-category="Noodle/Dumplings">
+                    <img src="../asserts/icons8-noodles-50.png">
+                    <span>Noodle/ Dumplings</span>
+                </button>
+                <button class="category-btn" data-category="Porridge">
+                    <img src="../asserts/icons8-porridge-50 (2).png">
+                    <span>Pooridge</span>
+                </button>
+                <button class="category-btn active" data-category="All Items">
+                    <img src="../asserts/icons8-grid-501.png">
+                    <span>All Items</span>
+                </button>
+            </div>
+            <div class="card items-list">
+                <div id="item-grid" class="items-grid">
+                    <div class="item-card">
+                        <img class="item-image" src="../asserts/Coffe_Black.png">
+                        <div class="item-info">
+                            <div class="item-name">Coffee Black</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="bottom-container">
+            <div class="bottom-group purple-group">
+                <button class="action-btn-large">
+                    <img src="../asserts/icons8-add-50.png">
+                    <span>New Bill</span>
+                </button>
+                <button class="action-btn-large">
+                    <img src="../asserts/icons8-price-tag-50.png">
+                    <span>Price Amendment</span>
+                </button>
+                <div class="cash-grid">
+                    <button class="cash-btn">$2</button>
+                    <button class="cash-btn">$5</button>
+                    <button class="cash-btn">$10</button>
+                    <button class="cash-btn">$20</button>
+                    <button class="cash-btn">$50</button>
+                    <button class="cash-btn voucher-btn">
+                        <img src="../asserts/icons8-gift-50.png">
+                        <span>Gift Voucher</span>
+                    </button>
+                </div>
+            </div>
+            <div class="bottom-group green-group">
+                <button class="green-btn">
+                    <img src="../asserts/icons8-cash-counter-50.png">
+                    <span>Open Cash Box</span>
+                </button>
+                <button class="green-btn">
+                    <img src="../asserts/icons8-star-64.png">
+                    <span>Goods Return</span>
+                </button>
+                <button class="green-btn">
+                    <img src="../asserts/icons8-exit-without-update-50.png">
+                    <span>Cancel Item</span>
+                </button>
+                <button class="green-btn">
+                    <img src="../asserts/icons8-cart-24.png">
+                    <span>Add Item</span>
+                </button>
+            </div>
+            <div class="bottom-group orange-group">
+                <button class="orange-btn">
+                    <img src="../asserts/icons8-cancel-50.png">
+                    <span>Terminate Transaction</span>
+                </button>
+                <button class="orange-btn">
+                    <img src="../asserts/icons8-print-32.png">
+                    <span>Print</span>
+                </button>
+                <button class="orange-btn">
+                    <img src="../asserts/icons8-bookmark-50.png">
+                    <span>Reserved Transaction</span>
+                </button>
+                <button class="orange-btn">
+                    <img src="../asserts/delete_18dp_1F1F1F_FILL0_wght400_GRAD0_opsz20.png">
+                    <span>Delete All Transaction</span>
+                </button>
+                <button class="orange-btn span-2">
+                    <img src="../asserts/icons8-undo-24.png">
+                    <span>Restore</span>
+                </button>
+                <button class="orange-btn span-2">
+                    <img src="../asserts/icons8-home-64.png">
+                    <span>Main Menu</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/DB.js"></script>
+    <script src="../scripts/billing.js"></script>
+</body>
+
+</html>

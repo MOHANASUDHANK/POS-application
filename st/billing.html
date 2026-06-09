@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Billing</title>
+    <link rel="stylesheet" href="billing.css">
+</head>
+
+<body>
+
+    <div class="billing-container">
+
+        <div class="left-panel">
+            <div class="card">
+                <h3>Current Transaction</h3>
+                <div>Change: $0.00</div>
+                <div>
+                    <div class="row"><span>Subtotal:</span><span id="subtotal">$0.00</span></div>
+                    <div class="row"><span>Tax (x%):</span><span id="tax">$0.00</span></div>
+                </div>
+                <div class="row total"><span>Payable:</span><span id="payable">$0.00</span></div>
+                <div class="row">
+                    <span>Tender:</span>
+                    <input type="text" id="tender" placeholder="$0.00">
+                </div>
+                <div class="row change"><span>Change:</span><span id="change">$0.00</span></div>
+            </div>
+
+            <div class="card">
+                <div class="numpad-grid">
+                    <button class="num-btn">7</button><button class="num-btn">8</button><button
+                        class="num-btn">9</button>
+                    <button class="num-btn">4</button><button class="num-btn">5</button><button
+                        class="num-btn">6</button>
+                    <button class="num-btn">1</button><button class="num-btn">2</button><button
+                        class="num-btn">3</button>
+                    <button class="num-btn">0</button><button class="num-btn">.</button><button
+                        class="clear-btn">C</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="categories-panel">
+            <button class="cat-btn active">All Items</button>
+            <button class="cat-btn">Beverages</button>
+            <button class="cat-btn">Snacks</button>
+            <button class="cat-btn">Desserts</button>
+        </div>
+
+        <div class="products-panel">
+            <div class="products-header">
+                <h2>Items</h2>
+            </div>
+            <div class="products-grid" id="products-grid">
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <button class="action-btn clear">Cancel Order</button>
+            <button class="action-btn print">Print Receipt</button>
+            <button class="action-btn pay">Submit Bill</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

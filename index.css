@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 160px;
+    height: 100vh;
+    background-color: rgb(32, 32, 99);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+}
+
+.main-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 30px 0px;
+}
+
+.main-logo img {
+    width: 60px;
+    border-radius: 50px;
+}
+
+.sidebar-content {
+    flex-grow: 1;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+.nav-menu li {
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.nav-menu li:hover,
+.nav-menu li.active {
+    background-color: rgb(104, 87, 255);
+}
+
+.user-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    margin-bottom: 30px;
+}
+
+.user-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.main-content {
+    flex-grow: 1;
+    height: 100vh;
+}
+
+#content-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+.hide{
+    display: none !important;
+}
+
+.modal{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.model-content{
+    background: white;
+    width: 350px;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    gap: 8px;
+}
+
+.confirm{
+    border-radius: 50%;
+    background-color: rgba(0, 128, 0, 0.202);
+    width: 70px;
+    height: 70px;
+}
+
+.delete{
+    border-radius: 50%;
+    background-color: rgba(251, 137, 137, 0.449);
+    width: 70px;
+    height: 70px;
+}
+.delete img{
+    margin: 10px 10px;
+}
+.confirm img{
+   margin: 14px 10px;
+   height: 40px;
+}
+
+.model-message{
+    text-align: center;
+    padding: 0 24px;
+}
+.model-message h2{
+    font-size: medium;
+    padding: 4px;
+}
+.model-message p{
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.571);
+    font-weight: 600;
+}
+
+.model-btns{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.model-btns img{
+    height: 20px;
+    filter:brightness(0) invert(1);
+}
+
+
+.cancel-btn,
+.req-btn,
+.del-btn,
+.save-btn,
+.sub-btn,
+.view-btn {
+    height: 40px;
+    padding: 0 24px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
+    outline: none;
+}
+
+.cancel-btn:active,
+.req-btn:active,
+.del-btn:active,
+.save-btn:active,
+.sub-btn:active,
+.view-btn:active {
+    transform: scale(0.97);
+}
+
+.cancel-btn {
+    background: #ffffff;
+    border: 1px solid #b4c6ef;
+    color: #1e3a8a;
+}
+
+.cancel-btn:hover {
+    background-color: #f0f4ff;
+    border-color: #93c5fd;
+}
+
+.save-btn,
+.sub-btn,
+.view-btn {
+    background-color: #2926dc;
+    color: white;
+    border: none;
+}
+
+.save-btn:hover,
+.sub-btn:hover,
+.view-btn:hover {
+    background-color: #1d1ab3;
+}
+
+.req-btn {
+    background-color: #16a34a;
+    color: white;
+    border: none;
+}
+
+.req-btn:hover {
+    background-color: #15803d;
+}
+
+.del-btn {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+}
+
+.del-btn:hover {
+    background-color: #dc2626;
+}
+
+#cancel-modal-confirm {
+    background-color: #2926dc;
+}
+
+#cancel-modal-confirm:hover {
+    background-color: #1d1ab3;
+}
+
+.submitted img{
+    height: 56px;
+}

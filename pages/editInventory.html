@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inventory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/editInventory.css">
+    <link rel="stylesheet" href="../styles/sidePanel.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+    <link rel="stylesheet" href="../styles/topPanel.css">
+
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="main-logo">
+            <img src="../asserts\POS - 01 Register Page.png">
+            <div class="logo-name">POS Cafe</div>
+        </div>
+        <div class="sidebar-content">
+            <ul class="nav-menu">
+                <a href="billing.html">
+                    <li>Billing</li>
+                </a>
+                <a href="Inventory.html">
+                    <li class="active-tab">Inventory</li>
+                </a>
+                <a href="itemRequest.html">
+                    <li>Item Request</li>
+                </a>
+                <a href="report.html">
+                    <li>Sales Report</li>
+                </a>
+                <li>Settings</li>
+                <li>Users</li>
+            </ul>
+        </div>
+        <div class="user-detail">
+            <div class="user-logo">
+                <img
+                    src="https://www.bing.com/th/id/OIP.mb-TeazydHy54flygpdclwHaHa?w=193&h=193&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2">
+                <span class="username">Administrator</span>
+            </div>
+        </div>
+    </aside>
+    <div class="inventory-container">
+        <div class="header">
+            <div class="main-header">
+                <h1>☰ Inventory</h1>
+                <div class="nav-path">
+                    <p><a href="Inventory.html">Inventory</a></p>
+                    <p>&gt;</p>
+                    <p>Edit Inventory</p>
+                </div>
+            </div>
+            <div class="date-time-container card">
+                <div class="day-container">
+                    <img src="../asserts/icons8-date-24.png">
+                    <div>27 May 2026<br><span>Monday</span></div>
+                </div>
+                <div class="time-container ">
+                    <img src="../asserts/icons8-clock-32.png">
+                    <span>10:30 AM</span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <form class="form-card card" id="edit-form">
+                <div class="form-header">
+                    <div class="form-main-header">Edit Inventory</div>
+                    <div class="form-sub-header">Update the details of the Inventory item</div>
+                </div>
+
+                <div class="input-field">
+                    <label>Item Code</label>
+                    <input type="text" id="id" name="id" readonly>
+                    <span class="field-hint text-muted">Auto-generated</span>
+                </div>
+                <div class="input-field">
+                    <label>Item Name <span class="required">*</span></label>
+                    <input type="text" id="itemName" name="name" placeholder="Enter item name">
+                </div>
+                <div class="input-field">
+                    <label>Item Image</label>
+                    <div class="upload-container">
+                        <input type="file" id="file-upload" accept=".png, .jpg, .webp" hidden />
+                        <div class="upload-box" id="uploadBox">
+                            <!-- <label for="file-upload" class="upload-inner" id="stateEmpty">
+                                <img src="../asserts/icons8-upload-to-cloud-64.png" alt="Cloud Upload">
+                                <span>Click to upload or drag and drop</span>
+                                <span class="sub">PNG, JPG or WEBP (MAX. 2MB)</span>
+                            </label> -->
+                            <div class="state-preview" id="statePreview">
+                                <div class="img-side">
+                                    <img src="" alt="uploadedImage" id="imgPreview">
+                                </div>
+                                <div class="action-side">
+                                    <div class="change-btn">
+                                        <img src="../asserts/icons8-upload-to-cloud-64.png"
+                                            style="height: 16px; margin: 0;">
+                                        <span>Change Image</span>
+                                    </div>
+                                    <span class="sub">PNG, JPG or WEBP (MAX. 2MB)</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label>Item Description</label>
+                    <textarea placeholder="Enter item description" id="description" name="description">
+                        </textarea>
+                </div>
+                <div class="input-field">
+                    <label>Category <span class="required">*</span></label>
+                    <select id="category" name="category">
+                        <option value="Beverage">Beverage</option>
+                        <option value="Steamed Bun">Steamed Bun</option>
+                        <option value="Steamed Dim Sum">Steamed Timsum</option>
+                        <option value="Deep Fry Timsum">Deep Fry Timsum</option>
+                        <option value="Bake">Bake</option>
+                        <option value="Porridge">Porridge</option>
+                        <option value="Noodles/Dumplings">Noodle/Dumplings</option>
+                    </select>
+                </div>
+                <div class="input-field">
+                    <label>Price <span class="required">*</span></label>
+                    <div class="input-wrapper">
+                        <input type="text" id="price" name="price" placeholder="Enter price" value="4.50">
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label>Unit <span class="required">*</span></label>
+                    <select id="unit" name="unit">
+                        <option value="Glass">Glass</option>
+                        <option value="Cup">Cup</option>
+                        <option value="Pcs">Pcs</option>
+                        <option value="Plate">Plate</option>
+                        <option value="Bowl">Bowl</option>
+                    </select>
+                </div>
+                <div class="input-field">
+                    <label>In Stock <span class="required">*</span></label>
+                    <div class="input-wrapper">
+                        <input type="text" name="stock" id="inStock" placeholder="Enter stock quantity" value="120">
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label>Status</label>
+                    <select id="status" name="status">
+                        <option value="In Stock">In Stock</option>
+                        <option value="Low Stock">Low Stock</option>
+                        <option value="Out Of Stock">Out Of Stock</option>
+                    </select>
+                    <span>Status is auto-populated based on Stock quantity</span>
+                </div>
+                <div class="input-field">
+                    <label>Supplier</label>
+                    <select id="supplier" name="supplier">
+                        <option value="Bean and Brew Supplies">Bean and Brew Supplies</option>
+                        <option value="Supplier A">Supplier A</option>
+                        <option value="Supplier B">Supplier B</option>
+                        <option value="Supplier C">Supplier C</option>
+                        <option value="Supplier D">Supplier D</option>
+                    </select>
+                </div>
+                <div class="form-footer">
+                    <button class="cancel-btn" type="button" id="cancel-btn">Cancel</button>
+                    <button id="update-btn" class="update-btn" type="button"><img src="../asserts/icons8-save-50.png">Update</button>
+                    <button type="button" class="delete-btn" id="inventory-delete"><img
+                            src="../asserts/delete_18dp_1F1F1F_FILL0_wght400_GRAD0_opsz20.png">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <dialog id="cancel-modal" class="modal">
+        <div class="model-content">
+            <div class="model-img cancel">
+                <img src="../asserts/icons8-go-back-26.png">
+            </div>
+            <div class="model-message">
+                <h2>Cancel Edit Inventory?</h2>
+                <p>Are you sure you want to cancel?</p>
+                <p>Any unsaved changes will be lost.</p>
+            </div>
+            <div class="model-btns">
+                <button id="cancel-modal-back" class="cancel-btn modal-close" type="button">No, Keep Editing</button>
+                <button id="cancel-modal-confirm" class="del-btn" type="button">
+                    <img src="../asserts/icons8-go-back-24.png">Yes, Cancel
+                </button>
+            </div>
+        </div>
+    </dialog>
+    <dialog id="update-modal" class="modal">
+        <div class="model-content">
+            <div class="model-img save">
+                <img src="../asserts/icons8-save-50.png">
+            </div>
+            <div class="model-message">
+                <h2>Confirm Update Item?</h2>
+                <p>Are you sure you want to update this changes to the inventory?</p>
+                
+            </div>
+            <div class="model-btns">
+                <button id="modal-back" class="cancel-btn modal-close" type="button">No, Go Back</button>
+                <button id="update-modal-confirm" class="save-btn" type="button">
+                    <img src="../asserts/icons8-save-50.png">Yes, Update
+                </button>
+            </div>
+        </div>
+    </dialog>
+    <dialog id="delete-modal" class="modal">
+        <div class="model-content">
+            <div class="model-img delete">
+                <img src="../asserts/icons8-trash-48.png">
+            </div>
+            <div class="model-message">
+                <h2>Delete Inventory</h2>
+                <p>Are you Sure you want to delete this inventory item?</p>
+                <p>This action cannot be undone.</p>
+            </div>
+            <div class="model-btns">
+                <button id="modal-back" class="cancel-btn modal-close" type="button">Cancel</button>
+                <button id="delete-modal-confirm" class="del-btn" type="button">
+                    <img src="../asserts/delete_18dp_1F1F1F_FILL0_wght400_GRAD0_opsz20.png">Delete
+                </button>
+            </div>
+        </div>
+    </dialog>
+    <script src="../scripts/DB.js"></script>
+    <script src="../scripts/modal.js"></script>
+    <script src="../scripts/editInventory.js"></script>
+
+</body>
+
+</html>

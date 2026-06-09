@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inventory</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/itemRequest.css">
+    <link rel="stylesheet" href="../styles/sidePanel.css">
+        <link rel="stylesheet" href="../styles/topPanel.css">
+
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="main-logo">
+            <img src="../asserts\POS - 01 Register Page.png">
+            <div class="logo-name">POS Cafe</div>
+        </div>
+        <div class="sidebar-content">
+            <ul class="nav-menu">
+                <a href="billing.html">
+                    <li>Billing</li>
+                </a>
+                <a href="Inventory.html" x>
+                    <li>Inventory</li>
+                </a>
+                <a href="itemRequest.html">
+                    <li class="active-tab">Item Request</li>
+                </a>
+                <a href="report.html">
+                    <li>Sales Report</li>
+                </a>
+                <li>Settings</li>
+                <li>Users</li>
+            </ul>
+        </div>
+        <div class="user-detail">
+            <div class="user-logo">
+                <img
+                    src="https://www.bing.com/th/id/OIP.mb-TeazydHy54flygpdclwHaHa?w=193&h=193&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2">
+                <span class="username">Administrator</span>
+            </div>
+        </div>
+    </aside>
+    <div class="request-container">
+        <div class="header">
+            <div class="main-header"><h1>☰ Item Request</h1></div>
+            <div class="date-time-container card">
+                <div class="day-container">
+                    <img src="../asserts/icons8-date-24.png">
+                    <div>27 May 2026<br><span>Monday</span></div>
+                </div>
+                <div class="time-container ">
+                    <img src="../asserts/icons8-clock-32.png">
+                    <span>10:30 AM</span>
+                </div>
+            </div>
+        </div>
+        <div class="filter-panel card">
+            <div class="filter-group">
+                <label>Request ID</label>
+                <input type="text" placeholder="Enter Request ID" id="id">
+            </div>
+            <div class="filter-group">
+                <label>Subject</label>
+                <input type="text" placeholder="Enter Subject" id="subject">
+            </div>
+            <div class="filter-group">
+                <label>Requested By</label>
+                <input type="text" placeholder="Requested By" id="requested-by">
+            </div>
+            <div class="filter-group">
+                <label>Requested Date From</label>
+                <input type="date" value="2026-06-02">
+            </div>
+            <div class="filter-group">
+                <label>Requested Date To</label>
+                <input type="date" value="2026-06-03">
+            </div>
+            <div class="filter-actions">
+                <button class="filter-btn active">
+                    <img src="../asserts/icons8-filter-50.png">
+                    Filter</button>
+                <button class="reset-btn">
+                    <img src="../asserts/icons8-reset-50.png">
+                    Reset</button>
+            </div>
+        </div>
+        <div class="request-panel card">
+            <div class="list-header">
+                <div class="header-container">
+                    <h2>Item Request List</h2>
+                    <span>Total 12 request</span>
+                </div>
+                <div class="functionality-button">
+                    <button class="add-btn" id="add-btn">
+                        <img src="../asserts/icons8-add-24.png">
+                        Add New Request
+                    </button>   
+                    <button class="excel-btn">
+                        <img src="../asserts/icons8-excel-48.png">
+                        Export to Excel
+                    </button>
+                </div>
+            </div>
+            <table class="request-table">
+                <thead>
+                    <tr>
+                        <th>Request Id <img src="../asserts/icons8-up-down-64.png"></th>
+                        <th>Subject <img src="../asserts/icons8-up-down-64.png"></th>
+                        <th>Requested By <img src="../asserts/icons8-up-down-64.png"></th>
+                        <th>Requested Date <img src="../asserts/icons8-up-down-64.png"></th>
+                        <th>Expecting Delivery <img src="../asserts/icons8-up-down-64.png"></th>
+                        <th>Status <img src="../asserts/icons8-up-down-64.png"></th>
+                        <th>Action </th>
+                    </tr>
+                </thead>
+                <tbody id="request-data"></tbody>
+            </table>
+            <div class="table-footer">
+                <div class="left-container">
+                    <span>Show</span>
+                    <select>
+                        <option>10</option>
+                        <option>25</option>
+                        <option>50</option>
+                    </select>
+                    <span>entries</span>
+                </div>
+                <div class="middle-container">
+                    <div>&lt;</div>
+                    <div class="active">1</div>
+                    <div>2</div>
+                    
+                    <div>&gt;</div>
+                </div>
+                <div class="right-container">
+                    <span>Showing 10 of 12 requests</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/DB.js"></script>
+    <script src="../scripts/itemRequest.js" defer></script>
+</body>
+
+</html>

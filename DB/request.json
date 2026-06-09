@@ -1,0 +1,84 @@
+[
+    {
+        "id" : "REQ-00001",
+        "subject" : "Request for Coffee Beans",
+        "requested_by" : "James Andresion",
+        "requested_date": "2 May 2026 01:15 AM",
+        "expecting_delivery" : "3 May 2026",
+        "status" : "Pending",
+        "action" : "Viewed"
+    },
+    {
+        "id" : "REQ-00002",
+        "subject" : "Request for Milk and Cream",
+        "requested_by" : "Sarah Johnsom",
+        "requested_date": "12 May 2026 01:15 AM",
+        "expecting_delivery" : "21 May 2026",
+        "status" : "On the way",
+        "action" : "Viewed"
+    },{
+        "id" : "REQ-00003",
+        "subject" : "Request for Disposable Cups",
+        "requested_by" : "James Andresion",
+        "requested_date": "3 May 2026 01:15 AM",
+        "expecting_delivery" : "9 May 2026",
+        "status" : "Pending",
+        "action" : "Viewed"
+    },{
+        "id" : "REQ-00004",
+        "subject" : "Request for Sugar and Sweetness",
+        "requested_by" : "Micheal  Brown",
+        "requested_date": "6 May 2026 01:15 AM",
+        "expecting_delivery" : "3 May 2026",
+        "status" : "Recived",
+        "action" : "Viewed"
+    },{
+        "id" : "REQ-00005",
+        "subject" : "Request for Teabags",
+        "requested_by" : "Emily Davis",
+        "requested_date": "20 May 2026 01:15 AM",
+        "expecting_delivery" : "6 May 2026",
+        "status" : "On the way",
+        "action" : "Viewed"
+    },{
+        "id" : "REQ-00006",
+        "subject" : "Request for Cholocate Syrup",
+        "requested_by" : "James Andresion",
+        "requested_date": "21 May 2026 01:15 AM",
+        "expecting_delivery" : "30 May 2026",
+        "status" : "Pending",
+        "action" : "Viewed"
+    },{
+        "id" : "REQ-00007",
+        "subject" : "Request for Paper Napkins",
+        "requested_by" : "Sarah Johnsom",
+        "requested_date": "12 May 2026 01:15 AM",
+        "expecting_delivery" : "7 May 2026",
+        "status" : "Recived",
+        "action" : "Viewed"
+    },{
+        "id" : "REQ-00008",
+        "subject" : "Request for Straws",
+        "requested_by" : "Micheal  Brown",
+        "requested_date": "6 May 2026 01:15 AM",
+        "expecting_delivery" : "5 May 2026",
+        "status" : "Canceled",
+        "action" : "Viewed"
+    },{
+        "id" : "REQ-00009",
+        "subject" : "Request for Vanilla Syrap",
+        "requested_by" : "Emily Davis",
+        "requested_date": "17 May 2026 01:15 AM",
+        "expecting_delivery" : "13 May 2026",
+        "status" : "On the way",
+        "action" : "Viewed"
+    },{
+        "id" : "REQ-00010",
+        "subject" : "Request Oat Milk",
+        "requested_by" : "Sarah Johnsom",
+        "requested_date": "11 May 2026 01:15 AM",
+        "expecting_delivery" : "9 May 2026",
+        "status" : "Pending",
+        "action" : "Viewed"
+    }
+]

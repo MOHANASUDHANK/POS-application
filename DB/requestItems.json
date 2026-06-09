@@ -1,0 +1,15 @@
+[
+    {
+        "name":"Coffee Beans 1Kg",
+        "quantity":5,
+        "expectedDate":"05 Jun 2026"
+    },{
+        "name":"Milk 1L",
+        "quantity":10,
+        "expectedDate":"05 Jun 2026"
+    },{
+        "name":"Sugar 1Kg",
+        "quantity":3,
+        "expectedDate":"05 Jun 2026"
+    }
+]

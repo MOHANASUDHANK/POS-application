@@ -1,0 +1,64 @@
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 11px 8px;
+}
+
+.main-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.main-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(19, 19, 58);
+}
+
+.nav-path {
+    font-size: 0.7rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #64748b;
+}
+
+.nav-path a {
+    color: rgb(73, 73, 230);
+    text-decoration: none;
+}
+
+.date-time-container {
+    padding: 8px 8px;
+    display: flex;
+    font-size: 0.7rem;
+}
+
+.date-time-container img {
+    width: 24px;
+}
+
+.day-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgb(39, 39, 158);
+    gap: 8px;
+    padding-right: 8px;
+    font-weight: 600;
+}
+.day-container span{
+    color: rgb(50, 50, 160);
+}
+
+.time-container {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    padding-left: 8px;
+}

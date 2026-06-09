@@ -1,0 +1,267 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+body {
+    background-color: rgb(238, 242, 252);
+    overflow: hidden;
+}
+
+.request-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 8px;
+    gap: 12px;
+}
+.card {
+    border-radius: 8px;
+    border: 1px solid rgb(227, 227, 245);
+    background: #ffff;
+}
+
+
+.filter-panel {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: end;
+    padding: 10px 20px;
+    gap: 16px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.filter-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgb(55, 55, 150);
+}
+
+.filter-panel input {
+    width: 100%;
+    border: 1px solid rgb(227, 227, 253);
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: rgb(34, 43, 88);
+    font-size: 0.85rem;
+    font-weight: 500;
+    outline: none;
+    padding: 10px;
+}
+.filter-actions {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.filter-btn,
+.reset-btn {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid rgb(227, 227, 255);
+    font-size: 0.8rem;
+}
+
+.active {
+    background-color: rgb(73, 73, 230);
+    color: white;
+    font-size: 0.9rem;
+    border: 1px solid rgb(61, 61, 196);
+
+}
+.active img {
+    filter: invert();
+}
+
+.filter-actions img {
+    height: 16px;
+}
+.request-panel {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+button:hover {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgb(73, 73, 230);
+    color: white;
+    /* font-size: 0.9rem; */
+    border: 1px solid rgb(61, 61, 196);
+}
+button:hover img {
+    filter: brightness(0) invert();
+
+}
+.list-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   }
+
+   .list-header h2{
+    font-size: 1.2rem;
+}
+
+.list-header span{
+    font-size: 0.8rem;
+    color: rgb(61, 61, 196) ;
+    font-weight: 600;
+}
+
+.functionality-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.add-btn,
+.excel-btn{
+     width: 14s0px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 1px solid rgb(227, 227, 255);
+    font-size: 0.8rem;
+    padding: 8px;
+    font-weight: 600;
+}
+.add-btn{
+    background:  rgb(238, 242, 252);
+    color: rgb(61, 61, 196) ;
+    
+}
+.functionality-button img{
+    height: 24px;
+}
+.request-table {
+    width: 100%;
+    border-collapse:collapse;
+    margin: 12px 0 0 0 ;
+    font-size: 0.8rem;
+}
+
+th {
+    background-color: rgba(73, 73, 230, 0.04);
+    color: rgb(32, 32, 99);
+    font-weight: 600;
+    padding: 14px 16px;
+    font-size: 0.8rem;
+    border-bottom: 1px solid rgb(230, 230, 255);
+}
+thead img {
+    height: 12px;
+    vertical-align: middle;
+    opacity: 0.6;
+}
+a{
+    text-decoration: none;
+}
+
+.request-table td {
+    padding: 8px 16px;
+    border-bottom: 1px solid rgb(241, 244, 255);
+    color: rgb(6, 6, 190);
+    font-weight: 600;
+}
+tr{
+    border: 1px solid rgb(241, 244, 255);
+}
+tr:hover{
+    /* filter:brightness(0.9); */
+    background-color: rgb(246, 255, 255);
+}
+.table-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgb(61, 61, 196);
+}
+
+.left-container,
+.middle-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.left-container select {
+    padding: 6px 30px 6px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    color: rgb(32, 32, 99);
+    font-weight: 600;
+    margin: 0 4px;
+    cursor: pointer;
+}
+
+.middle-container div {
+    min-width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    color: rgb(32, 32, 99);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+.middle-container .active{
+    color: white;
+}
+th{
+    text-align: left;
+}
+td{
+    text-align: left;
+}
+td img{
+    height: 22px;
+    width: 22px;
+}
+
+td:nth-child(6) span{
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.green{
+    color: green;
+    background: rgba(0, 128, 0, 0.104) ;
+}
+
+.red{
+    color: red ;
+    background-color: rgba(255, 0, 0, 0.103);
+}
+.blue{
+    color: blue ;
+    background: rgba(0, 0, 255, 0.103);
+}
+.orange{
+    color: orange ;
+    background-color: rgba(255, 166, 0, 0.100);
+}

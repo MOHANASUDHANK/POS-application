@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+/* Universal modal styling for ALL pages */
+/* .ui-modal {
+  border: none;
+  border-radius: 8px;
+  padding: 24px;
+  /* max-width: 500px; */
+  /* width: 90%; */
+  /* box-shadow: 0 10px 30px rgba(0,0,0,0.2); */
+/* } */
+
+/* .ui-modal::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px); */
+/* } */
+
+/* Page-specific overrides go into index.css or dashboard.css */
+/* Example inside dashboard.css: Make the dashboard modal wider */
+/* .dashboard-specific-modal { max-width: 800px; } */
+    </style>
+</head>
+<body>
+
+    <img id="img">
+
+    <dialog id="welcomePromoModal" class="ui-modal">
+        <h2>Welcome to our site!</h2>
+        <p>Here is your unique homepage promo code...</p>
+        <button class="close-modal-btn">&times;</button>
+    </dialog>
+
+<button id="openPromoBtn">click me</button>
+    <script>    
+    // const img=document.getElementById('img');
+    // const sdata = localStorage.getItem('inventoryData');
+    // const data = JSON.parse(sdata);
+    // console.log(data[0]);
+    // img.src=data[0].image;
+
+// js/shared-modal.js
+
+// Global function that any page can use to initialize its modals
+window.initPageModals = function() {
+  const modals = document.querySelectorAll('dialog');
+
+  modals.forEach(modal => {
+    // 1. Find close buttons inside this specific modal
+    const closeBtn = modal.querySelector('.close-modal-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => modal.close());
+    }
+
+    // 2. Global background/backdrop click handling
+    modal.addEventListener('click', (e) => {
+      const rect = modal.getBoundingClientRect();
+      if (
+        e.clientX < rect.left || e.clientX > rect.right ||
+        e.clientY < rect.top || e.clientY > rect.bottom
+      ) {
+        modal.close();
+      }
+    });
+  });
+};
+
+// js/index.js
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Wire up the universal closing behaviors first
+//   window.initPageModals();
+
+  // Handle unique homepage triggers
+  const promoBtn = document.getElementById('openPromoBtn');
+  const promoModal = document.getElementById('welcomePromoModal');
+
+  if (promoBtn && promoModal) {
+    promoBtn.addEventListener('click', () => {
+      promoModal.showModal(); 
+    });
+  }
+});
+
+//     console.log( new Intl.DateTimeFormat('en-In', { 
+//     day: '2-digit' ,month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false 
+// }).format(new Date()));
+    
+ </script>
+</body>
+</html>

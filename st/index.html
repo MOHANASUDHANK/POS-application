@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="top-left">
+            <div class="menu-icon">☰</div>
+            <h3>Inventory Management System</h3>
+        </div>
+        <div class="top-right">
+            <div class="notification">Bell</div>
+            <div class="profile-section">
+                <div class="profile-icon">logo</div>
+                <span>Admin User</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="app-layout">
+        <aside class="sidebar">
+            <ul id="nav-menu">
+                <li id="menu-dashboard" class="active" onclick="switchPage('dashboard.html', 'menu-dashboard')">Dashboard</li>
+                <li id="menu-billing" onclick="switchPage('billing.html', 'menu-billing')">Billing</li>
+                <li id="menu-inventory" onclick="switchPage('inventory.html', 'menu-inventory')">Inventory</li>
+                <li id="menu-item_request" onclick="switchPage('item_request.html', 'menu-item_request')">Item Request</li>
+                <li id="menu-sales_report" onclick="switchPage('sales_report.html', 'menu-sales_report')">Sales Report</li>
+            </ul>
+        </aside>
+
+        <main class="main-content shell-main">
+            <iframe id="content-frame" src="dashboard.html"></iframe>
+        </main>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

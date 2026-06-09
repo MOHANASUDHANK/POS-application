@@ -1,0 +1,44 @@
+[
+    {
+        "name":"Espresso",
+        "quantity":45,
+        "price":135.00
+    },{
+        "name":"Croissant",
+        "quantity":38,
+        "price":228.00
+    },{
+        "name":"Cappuccino",
+        "quantity":52,
+        "price":312.00
+    },{
+        "name":"Latte",
+        "quantity":41,
+        "price":123.00
+    },{
+        "name":"Americano",
+        "quantity":29,
+        "price":174.00
+    },{
+        "name":"Mocha",
+        "quantity":33,
+        "price":165.00
+    },{
+        "name":"Hot Chocolate",
+        "quantity":60,
+        "price":120.00
+    },{
+        "name":"Tea",
+        "quantity":47,
+        "price":188.00
+    },{
+        "name":"Iced Coffee",
+        "quantity":24,
+        "price":216.00
+    },{
+        "name":"Smoothie",
+        "quantity":35,
+        "price":175.00
+    }
+   
+]

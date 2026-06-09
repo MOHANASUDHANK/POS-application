@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Edit Item Request</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/editRequest.css">
+    <link rel="stylesheet" href="../styles/sidePanel.css">
+    <link rel="stylesheet" href="../styles/topPanel.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="main-logo">
+            <img src="../asserts/POS - 01 Register Page.png">
+            <div class="logo-name">POS Cafe</div>
+        </div>
+        <div class="sidebar-content">
+            <ul class="nav-menu">
+                <a href="billing.html">
+                    <li>Billing</li>
+                </a>
+                <a href="Inventory.html">
+                    <li>Inventory</li>
+                </a>
+                <a href="itemRequest.html">
+                    <li class="active-tab">Item Request</li>
+                </a>
+                <a href="report.html">
+                    <li>Sales Report</li>
+                </a>
+                <li>Settings</li>
+                <li>Users</li>
+            </ul>
+        </div>
+        <div class="user-detail">
+            <div class="user-logo">
+                <img
+                    src="https://www.bing.com/th/id/OIP.mb-TeazydHy54flygpdclwHaHa?w=193&h=193&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2">
+                <span class="username">Administrator</span>
+            </div>
+        </div>
+    </aside>
+    <div class="request-container">
+        <div class="header">
+            <div class="main-header">
+                <h1>☰ Item Request</h1>
+                <div class="nav-path">
+                    <p><a href="itemRequest.html">Item Request</a></p>
+                    <p>&gt;</p>
+                    <p>Edit Item Request</p>
+                </div>
+            </div>
+            <div class="date-time-container card">
+                <div class="day-container">
+                    <img src="../asserts/icons8-date-24.png">
+                    <div>27 May 2026<br><span>Monday</span></div>
+                </div>
+                <div class="time-container ">
+                    <img src="../asserts/icons8-clock-32.png">
+                    <span>10:30 AM</span>
+                </div>
+            </div>
+        </div>
+        <form class="req-info card" id="req-form">
+            <div class="req-header">Request Information</div>
+            <div class="input-panel">
+                <div class="input-field disabled-field">
+                    <label>Request ID</label>
+                    <input type="text" name="id" id="id" value="REQ-00013" readonly tabindex="-1">
+                </div>
+                <div class="input-field">
+                    <label>Subject<span class="required">*</span></label>
+                    <input type="text" name="subject" id="subject" placeholder="Enter subject" required>
+                </div>
+                <div class="input-field disabled-field">
+                    <label>Requested By</label>
+                    <input type="text" name="requestedBy" id="requested_by" value="Admin" readonly tabindex="-1">
+                </div>
+                <div class="input-field disabled-field">
+                    <label>Requested Date</label>
+                    <input type="text" name="requestedDate" id="requested_date" value="20 May 2024" readonly tabindex="-1">
+                </div>
+                <div class="input-field">
+                    <label>Expecting Delivery<span class="required">*</span></label>
+                    <input type="date" name="expectingDate" id="expecting_delivery" required>
+                </div>
+                <div class="input-field disabled-field">
+                    <label>Status</label>
+                    <input type="text" name="status" id="status" value="Pending" readonly tabindex="-1">
+                </div>
+            </div>
+        </form>
+        <div class="items-panel card">
+            <div class="panel-header">
+                <div class="left">
+                    <h2>Items</h2>
+                    <p class="sub">Total <span>0</span> items</p>
+                </div>
+                <div class="right">
+                    <button type="button" id="add-item-btn" class="add-item-btn">
+                        <span class="btn-icon">+</span> Add Item
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="items-table">
+                    <thead>
+                        <tr>
+                            <th>Item Name<span class="required">*</span></th>
+                            <th>Description</th>
+                            <th>Quantity<span class="required">*</span></th>
+                            <th>Unit</th>
+                            <th class="action-col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="item-list">
+                    </tbody>
+                </table>
+            </div>
+            <div class="buttons-row">
+                <button type="button" id="cancel-btn" class="cancel-btn">Cancel</button>
+                <button type="button" id="update-btn" class="save-btn">
+                    <img src="../asserts/icons8-save-50.png" alt="">Update
+                </button>
+                
+            </div>
+        </div>
+    </div>
+      <dialog id="update-modal" class="modal">
+        <div class="model-content">
+            <div class="model-img save">
+                <img src="../asserts/icons8-save-50.png">
+            </div>
+            <div class="model-message">
+                <h2>Update Item Request?</h2>
+                <p>Please confirm that you want to save this changes in item request. You can able to edit it after
+                    updating</p>
+            </div>
+            <div class="model-btns">
+                <button id="modal-back" class="cancel-btn modal-close" type="button">Cancel</button>
+                <button id="update-modal-confirm" class="sub-btn " type="button">
+                    <img src="../asserts/icons8-save-50.png">Yes, Update
+                </button>
+            </div>
+        </div>
+    </dialog>
+    <dialog id="cancel-modal" class="modal">
+        <div class="model-content">
+            <div class="model-img cancel">
+                <img src="../asserts/icons8-go-back-26.png">
+            </div>
+            <div class="model-message">
+                <h2>Cancel Edit Request</h2>
+                <p>Are you sure you want to cancel?</p>
+                <p>Any unsaved changes will be lost.</p>
+            </div>
+            <div class="model-btns">
+                <button id="cancel-modal-back" class="cancel-btn modal-close" type="button">No, Keep Editing</button>
+                <button id="cancel-modal-confirm" class="del-btn" type="button">
+                    <img src="../asserts/icons8-go-back-24.png">Yes, Cancel
+                </button>
+            </div>
+        </div>
+    </dialog>
+    <script src="../scripts/DB.js"></script>
+    <script src="../scripts/editRequest.js"></script>
+    <script src="../scripts/modal.js"></script>
+</body>
+</html>

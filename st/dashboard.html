@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Billing - POS Cafe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="billing.css">
+</head>
+<body>
+
+    <div class="billing-container">
+        
+        <header class="billing-header">
+            <div class="header-left">
+                <i class="fa-solid fa-bars menu-toggle"></i>
+                <h1>Current Bill</h1>
+            </div>
+            <div class="header-center">
+                <span class="total-label">Total Amount</span>
+                <span class="total-price">$0.00</span>
+            </div>
+            <div class="header-right">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search menu items...">
+                </div>
+                <button class="icon-btn purple-btn"><i class="fa-solid fa-table-cells-large"></i></button>
+                <button class="icon-btn white-btn"><i class="fa-solid fa-list"></i></button>
+            </div>
+        </header>
+
+        <div class="left-panel">
+            <div class="bill-table-container">
+                <div class="table-header">
+                    <span>Item</span>
+                    <span>Qty</span>
+                    <span>Unit Price</span>
+                    <span>Total</span>
+                </div>
+                <div class="empty-bill-state">
+                    <div class="empty-icon">
+                        <i class="fa-regular fa-file-lines"></i>
+                    </div>
+                    <h3>No items added yet</h3>
+                    <p>Select items from the menu to add to the bill</p>
+                </div>
+            </div>
+
+            <div class="keypad-container">
+                <div class="inputs-side">
+                    <div class="input-group">
+                        <label>Item Number</label>
+                        <div class="barcode-input">
+                            <input type="text" placeholder="Scan / Enter item number">
+                            <i class="fa-solid fa-barcode"></i>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Table No</label>
+                            <input type="text" placeholder="Enter table no">
+                        </div>
+                        <div class="input-group">
+                            <label>No of Cover</label>
+                            <input type="text" placeholder="Enter no of cover">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="numpad-side">
+                    <div class="qty-controller">
+                        <span class="qty-label">Quantity</span>
+                        <div class="qty-actions">
+                            <button class="qty-btn">-</button>
+                            <input type="number" value="1" readonly>
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                    <div class="numpad-grid">
+                        <button class="num">7</button><button class="num">8</button><button class="num">9</button>
+                        <button class="action-btn purple-btn grid-span-2">Add</button>
+                        <button class="num">4</button><button class="num">5</button><button class="num">6</button>
+                        <button class="action-btn blue-btn grid-span-2">AC</button>
+                        <button class="num">1</button><button class="num">2</button><button class="num">3</button>
+                        <button class="action-btn light-blue-btn grid-span-2">Clear</button>
+                        <button class="num zero-btn">0</button><button class="num">.</button>
+                        <button class="num"><i class="fa-solid fa-delete-left"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-panel">
+            <button class="cat-item active"><i class="fa-solid fa-glass-water"></i> Beverage</button>
+            <button class="cat-item"><i class="fa-solid fa-cookie"></i> Steamed Bun</button>
+            <button class="cat-item"><i class="fa-solid fa-stroopwafel"></i> Streamed Timsum</button>
+            <button class="cat-item"><i class="fa-solid fa-bowl-rice"></i> Deep Fry Timsum</button>
+            <button class="cat-item"><i class="fa-solid fa-bread-slice"></i> Bake</button>
+            <button class="cat-item"><i class="fa-solid fa-bowl-food"></i> Noodle/ Dumplings</button>
+            <button class="cat-item"><i class="fa-solid fa-mortar-pestle"></i> Porridge</button>
+            <button class="cat-item"><i class="fa-solid fa-border-all"></i> All Items</button>
+        </div>
+
+        <div class="items-panel">
+            <div class="items-grid">
+                <div class="item-card">
+                    <span class="badge">1</span>
+                    <div class="item-img-placeholder">☕</div>
+                    <div class="item-info">
+                        <h4>Coffee Black</h4>
+                        <span class="chinese-text">咖啡黑</span>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <div class="item-img-placeholder">🍵</div>
+                    <div class="item-info">
+                        <h4>Tea Black</h4>
+                        <span class="chinese-text">茶黑色</span>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <div class="item-img-placeholder">🌼</div>
+                    <div class="item-info">
+                        <h4>Chrysanthemum Tea</h4>
+                        <span class="chinese-text">菊花茶</span>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <div class="item-img-placeholder">☕</div>
+                    <div class="item-info">
+                        <h4>Coffee</h4>
+                        <span class="chinese-text">咖啡</span>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <div class="item-img-placeholder">🍹</div>
+                    <div class="item-info">
+                        <h4>Iced Tea</h4>
+                        <span class="chinese-text">冰茶</span>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <div class="item-img-placeholder">🥤</div>
+                    <div class="item-info">
+                        <h4>Soya Milk</h4>
+                        <span class="chinese-text">大豆麦克</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <footer class="billing-footer">
+            <div class="footer-section purple-actions">
+                <button class="f-btn p-btn"><i class="fa-solid fa-circle-plus"></i> New Bill</button>
+                <button class="f-btn p-btn"><i class="fa-solid fa-tag"></i> Price Amendment</button>
+                <button class="f-btn cash-btn">$2</button>
+                <button class="f-btn cash-btn">$5</button>
+                <button class="f-btn cash-btn">$10</button>
+                <button class="f-btn cash-btn">$20</button>
+                <button class="f-btn cash-btn">$50</button>
+                <button class="f-btn p-btn"><i class="fa-solid fa-gift"></i> Gift Voucher</button>
+            </div>
+            <div class="footer-section green-actions">
+                <button class="f-btn g-btn"><i class="fa-solid fa-cash-register"></i> Open Cash Box</button>
+                <button class="f-btn g-btn"><i class="fa-solid fa-rotate-left"></i> Goods Return</button>
+                <button class="f-btn g-btn"><i class="fa-solid fa-ban"></i> Cancel Item</button>
+                <button class="f-btn g-btn"><i class="fa-solid fa-cart-plus"></i> Add Item</button>
+            </div>
+            <div class="footer-section orange-actions">
+                <button class="f-btn o-btn"><i class="fa-solid fa-rectangle-xmark"></i> Terminate Transaction</button>
+                <button class="f-btn o-btn"><i class="fa-solid fa-print"></i> Print</button>
+                <button class="f-btn o-btn"><i class="fa-solid fa-bookmark"></i> Reserved Transaction</button>
+                <button class="f-btn o-btn"><i class="fa-solid fa-trash-can"></i> Delete All Transaction</button>
+                <button class="f-btn o-btn long-btn"><i class="fa-solid fa-arrows-rotate"></i> Restore</button>
+                <button class="f-btn o-btn long-btn"><i class="fa-solid fa-house"></i> Main Menu</button>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
