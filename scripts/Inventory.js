@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async() => {
     const tableBody = document.getElementById("inventory-data");
     const addBtn = document.getElementById("add-btn");
     const reqBtn = document.getElementById("req-btn");
 
-    let data = getItems();
+    let data =await getItems();
 
     let tableHTML = "";
 

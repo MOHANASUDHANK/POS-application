@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded",async () => {
 
     const addItemButton = document.getElementById('add-item-btn');
     const submitButton = document.getElementById('sub-btn');
@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const queryParam = new URLSearchParams(window.location.search);
     const id = queryParam.get("id");
 
-    let data = getRequests();
-    let itemsData = getRequestItems();
-    let inventoryData = getItems(); 
+    let data =await getRequests();
+    let itemsData =await getRequestItems();
+    let inventoryData =await getItems(); 
 
     const request = data.find(i => i.id == id);
     const requestItems = itemsData.find(i => i.id == id);
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("subject").value = request.subject;
         document.getElementById("requested_by").value = request.requestedBy;
         document.getElementById("requested_date").value = requestedDate;
-        document.getElementById("expecting_delivery").value = request.expectingDate;
+        document.getElementById("expecting_delivery").value = new Date(request.expectingDate).toISOString().split("T")[0];;
         document.getElementById("status").value = request.status;
     }
 

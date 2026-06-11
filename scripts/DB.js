@@ -1,25 +1,27 @@
 
-function deleteItem(id) {
-    let data = getItems();
+async function deleteItem(id) {
+    let data =await getItems();
     data = data.filter(item => item.id !== id);
     localStorage.setItem('inventoryData', JSON.stringify(data));
     console.log(id);
 }
 
-function addItem(newItem) {
-    let data = getItems();
+async function addItem(newItem) {
+    let data =await getItems();
     data.push(newItem);
     localStorage.setItem('inventoryData', JSON.stringify(data));
 }
 
-function getItems() {
-    return JSON.parse(localStorage.getItem('inventoryData')) || [];
-    console.log("hi from db get items");
-    
+
+async function getItems() {
+   let data=null;
+   await fetch('../DB/inventory.json').then(res=>data=res.json()).catch(e=>console.log(e))
+    return   data;
 }
 
-function editItem(editedItem) {
-    let data = getItems();
+
+async function editItem(editedItem) {
+    let data =await getItems();
     const id = editedItem.id;
     const index = data.findIndex(item => item.id === id);
     console.log(editedItem);
@@ -29,27 +31,29 @@ function editItem(editedItem) {
     localStorage.setItem('inventoryData', JSON.stringify(data));
 }
 
-function getRequests(){
-    return JSON.parse(localStorage.getItem('requestData'))||[];
+async function getRequests(){
+     let data=null;
+   await fetch('../DB/request.json').then(res=>data=res.json()).catch(e=>console.log(e))
+    return   data;
 }
 
-function addRequest(newRequest){
-    let data = getRequests();
+async function addRequest(newRequest){
+    let data =await getRequests();
     data.push(newRequest);
     localStorage.setItem('requestData', JSON.stringify(data));
     console.log(data);
     
 }
 
-function deleteRequest(id){
-    let data =getRequests();
+async function deleteRequest(id){
+    let data =await getRequests();
     data = data.filter(request => request.id !== id);
     localStorage.setItem('requestData', JSON.stringify(data));
     deleteRequestItem(id);
 }
 
-function editRequest(editedRequest){
-    let data = getRequests();
+async function editRequest(editedRequest){
+    let data =await getRequests();
     const id = editedRequest.id;
     const index = data.findIndex(request => request.id == id);
     data[index] = editedRequest;
@@ -61,23 +65,25 @@ function editRequest(editedRequest){
 
 
 
-function getRequestItems(){
-    return JSON.parse(localStorage.getItem('requestItemsData'))||[];
+async function getRequestItems(){
+    let data=null;
+   await fetch('../DB/requestItems.json').then(res=>data=res.json()).catch(e=>console.log(e))
+    return   data;
 }
 
-function addRequestItems(newRequestItems){
-    let data = getRequestItems();
+async function addRequestItems(newRequestItems){
+    let data =await getRequestItems();
     data.push(newRequestItems);
     localStorage.setItem('requestItemsData',JSON.stringify(data));
     console.log(newRequestItems);
     
 }
 
-function editRequestItems(newRequestItems){
-    let data = getRequestItems();
+async function editRequestItems(newRequestItems){
+    let data =await getRequestItems();
     console.log(data);
     
-    const index = data.findIndex(requestItem => requestItem.id === newRequestItems.id);
+    const index =await data.findIndex(requestItem => requestItem.id === newRequestItems.id);
     data[index] = newRequestItems;
     localStorage.setItem('requestItemsData',JSON.stringify(data));
     

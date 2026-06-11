@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded",async () => {
 
     const uploadBox = document.getElementById('uploadBox');
     const fileInput = document.getElementById('file-upload');
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const updateButton = document.getElementById('update-modal-confirm');
     const queryParam = new URLSearchParams(window.location.search);
     const id = queryParam.get("id");
-    let data = getItems();
+    let data = await getItems();
     let imageString = null;
     console.log(data);
     const item = data.find(i => i.id === id)

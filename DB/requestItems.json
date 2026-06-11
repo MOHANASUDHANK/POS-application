@@ -1,15 +1,121 @@
 [
     {
-        "name":"Coffee Beans 1Kg",
-        "quantity":5,
-        "expectedDate":"05 Jun 2026"
-    },{
-        "name":"Milk 1L",
-        "quantity":10,
-        "expectedDate":"05 Jun 2026"
-    },{
-        "name":"Sugar 1Kg",
-        "quantity":3,
-        "expectedDate":"05 Jun 2026"
+        "id": "REQ-000001",
+        "data": [
+            {
+                "name": "Coffee",
+                "quantity": 5
+            },
+            {
+                "name": "Tea",
+                "quantity": 10
+            },
+            {
+                "name": "Water",
+                "quantity": 3
+            }
+        ]
+    },
+    {
+        "id": "REQ-000002",
+        "data": [
+            {
+                "name": "Char Siu Bao",
+                "quantity": 5
+            },
+            {
+                "name": "Xiaolongbao",
+                "quantity": 10
+            },
+            {
+                "name": "Gua Bao",
+                "quantity": 3
+            }
+        ]
+    },
+    {
+        "id": "REQ-000003",
+        "data": [
+            {
+                "name": "Shumai",
+                "quantity": 5
+            },
+            {
+                "name": "Char Siu Bao",
+                "quantity": 10
+            },
+            {
+                "name": "Cheong Fun",
+                "quantity": 3
+            }
+        ]
+    },
+    {
+        "id": "REQ-000004",
+        "data": [
+            {
+                "name": "Taro Puff",
+                "quantity": 5
+            },
+            {
+                "name": "Glutinous Dumpling",
+                "quantity": 10
+            },
+            {
+                "name": "Radish Puff",
+                "quantity": 3
+            }
+        ]
+    },
+    {
+        "id": "REQ-000005",
+        "data": [
+            {
+                "name": "Banana bread",
+                "quantity": 5
+            },
+            {
+                "name": "Croissants",
+                "quantity": 10
+            },
+            {
+                "name": "Cinnamon Rolls",
+                "quantity": 3
+            }
+        ]
+    },
+    {
+        "id": "REQ-000006",
+        "data": [
+            {
+                "name": "Ramen",
+                "quantity": 5
+            },
+            {
+                "name": "Pad Thai",
+                "quantity": 10
+            },
+            {
+                "name": "Pho",
+                "quantity": 3
+            }
+        ]
+    },
+    {
+        "id": "REQ-000007",
+        "data": [
+            {
+                "name": "Kasha",
+                "quantity": 5
+            },
+            {
+                "name": "Champorado",
+                "quantity": 10
+            },
+            {
+                "name": "Congee",
+                "quantity": 3
+            }
+        ]
     }
 ]

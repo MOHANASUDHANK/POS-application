@@ -6,6 +6,7 @@
 }
 body {
     background-color: rgb(238, 242, 252);
+        user-select: none;
 }
 
 .inventory-container{

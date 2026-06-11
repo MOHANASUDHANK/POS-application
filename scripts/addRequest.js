@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded',async () => {
 
     const addItemButton = document.getElementById('add-item-btn')
     const submitButton = document.getElementById('sub-btn');
@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const tableBody = document.getElementById('items-table-body');
     
     let requestId ="REQ-000001" ;
-    let data = getRequests();
-    let inventoryData = getItems();
+    let data =await getRequests();
+    let inventoryData =await getItems();
     console.log(data);
     
     if(data.length != 0){

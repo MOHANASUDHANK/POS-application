@@ -1,7 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async() => {
     const tableBody = document.getElementById("request-data");
     const addBtn = document.getElementById("add-btn");
-    let data = getRequests();
+    let data =await getRequests();
     
             let tableHTML = "";
             let date = null

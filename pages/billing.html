@@ -85,25 +85,11 @@
                     </div>
 
                     <div class="bill-items-container">
-                        <div class="empty-bill-state" style="display: none;">
+                        <div class="empty-bill-state"style="display: none;" >
                             <h3 class="empty-state-title">No items added yet</h3>
                             <p class="empty-state-subtitle">Select items from the menu to add to the bill</p>
                         </div>
-                        <div class="bill-items-list">
-                            <div class="bill-row">
-                                <div class="bill-item-info">
-                                    <img src="../asserts/barley_water.png" class="bill-item-image">
-                                    <span class="bill-item-name">Barley Water</span>
-                                </div>
-                                <div class="bill-item-quantity">2</div>
-                                <div class="bill-item-price">$15</div>
-                                <div class="bill-item-total">$30</div>
-                                <div class="bill-item-action">
-                                    <button class="del-btn"><img
-                                            src="../asserts/delete_18dp_1F1F1F_FILL0_wght400_GRAD0_opsz20.png"></button>
-                                </div>
-                            </div>
-                            
+                        <div class="bill-items-list" >
                         </div>
                     </div>
                     <div class="bill-instruction">
@@ -152,7 +138,7 @@
                         <div class="input-item-no-getter">
                             <label class="input-item-no-getter-box-label">Item Number</label>
                             <div class="input-box-no">
-                                <input type="text" placeholder="Scan / Enter item number">
+                                <input type="text" class="itemNoInput"placeholder="Scan / Enter item number" autofocus>
                             </div>
                         </div>
                         <div class="input-item-quantity-getter">
@@ -166,7 +152,7 @@
                             </div>
                         </div>
                         <div class="add-button-wrapper">
-                            <button class="action-btn add-btn">Add</button>
+                            <button class="action-btn add-btn" id="bill-add-btn">Add</button>
                         </div>
                     </div>
 
@@ -174,30 +160,30 @@
                         <div class="table-info">
                             <div class="table-no">
                                 <label>Table No</label>
-                                <input type="text" placeholder="Enter table no">
+                                <input type="text" class="tableNoInput" placeholder="Enter table no">
                             </div>
                             <div class="table-cover">
                                 <label>No of cover</label>
-                                <input type="text" placeholder="Enter no of cover">
+                                <input type="text"class="coverNoInput" placeholder="Enter no of cover">
                             </div>
                         </div>
                         <div class="numpad">
-                            <button class="numpad-btn">7</button>
-                            <button class="numpad-btn">8</button>
-                            <button class="numpad-btn">9</button>
-                            <button class="numpad-btn">4</button>
-                            <button class="numpad-btn">5</button>
-                            <button class="numpad-btn">6</button>
-                            <button class="numpad-btn">1</button>
-                            <button class="numpad-btn">2</button>
-                            <button class="numpad-btn">3</button>
-                            <button class="numpad-btn">0</button>
-                            <button class="numpad-btn">.</button>
-                            <button class="numpad-btn">C </button>
+                            <button class="numpad-btn" value="7">7</button>
+                            <button class="numpad-btn" value="8">8</button>
+                            <button class="numpad-btn" value="9">9</button>
+                            <button class="numpad-btn" value="4">4</button>
+                            <button class="numpad-btn" value="5">5</button>
+                            <button class="numpad-btn" value="6">6</button>
+                            <button class="numpad-btn" value="1">1</button>
+                            <button class="numpad-btn" value="2">2</button>
+                            <button class="numpad-btn" value="3">3</button>
+                            <button class="numpad-btn" value="0">0</button>
+                            <button class="numpad-btn" value=".">.</button>
+                            <button class="numpad-btn backspace" value="c"><img src="../asserts/icons8-backspace-32.png"> </button>
                         </div>
                         <div class="input-field-functions">
-                            <button class="action-btn ac-btn">AC</button>
-                            <button class="action-btn clear-btn">Clear</button>
+                            <button class="action-btn ac-btn" id="input-allclear-btn">AC</button>
+                            <button class="action-btn clear-btn" id="input-clear-btn">Clear</button>
                         </div>
                     </div>
                 </div>

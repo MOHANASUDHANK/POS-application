@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded",async () => {
     const uploadBox = document.getElementById('uploadBox');
     const fileInput = document.getElementById('file-upload');
     const stateEmpty = document.getElementById('stateEmpty');
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let itemId = "ITM-000001"
     let objectUrl = null;
     let imageString = null;
-    let data = getItems()
+    let data =await getItems()
 
     if (data.length != 0) {
         const lastId = data[data.length - 1].id;
@@ -98,11 +98,5 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = 'Inventory.html';
 
     })
-
-    confSaveBackButton.addEventListener('click',()=>{
-            confAddModal.close()
-    })
-   
-    
-
+  
 });
