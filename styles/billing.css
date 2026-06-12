@@ -169,7 +169,8 @@ body {
     display: flex;
     flex-direction: column;
 }
-img{
+
+img {
     user-select: none;
 }
 
@@ -189,14 +190,7 @@ img{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
-    overflow: auto;
     min-height: 0;
-    /* max-height: 360px;s */
-    scrollbar-width: none;
-
-
 }
 
 .bill-header-row {
@@ -222,6 +216,9 @@ img{
 
 .bill-items-list {
     width: 100%;
+    overflow-y: auto;
+    flex-grow: 1;
+    scrollbar-width: none;
 }
 
 .bill-item-info {
@@ -278,12 +275,12 @@ img{
     color: #1e293b;
 }
 
-.bill-quantity-input{
+.bill-quantity-input {
     width: 45px;
     text-align: right;
     border: 1px solid #cbd5e1;
     border-radius: 6px;
-    padding:  2px;
+    padding: 2px;
     font-weight: 700;
     color: #334155;
     outline: none;
@@ -324,14 +321,20 @@ img{
 }
 
 .bill-instruction {
+    display: flex;
     background-color: #eef0ff;
-    padding: 8px 8px 8px 30px;
-    margin: 16px 0px;
+    padding: 8px;
     font-size: 0.7rem;
     border-radius: 8px;
-    margin: 0px;
+    margin-top: auto;
     text-align: justify;
 }
+
+.bill-instruction img {
+    height: 24px;
+    margin-right: 10px;
+}
+
 
 .empty-bill-state {
     display: flex;
@@ -340,16 +343,24 @@ img{
     justify-content: center;
     text-align: center;
     max-width: 280px;
+    margin: auto;
+    flex-grow: 1;
+}
+
+
+/* .empty-state-icon img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+} */
+
+.hidden {
+    display: none !important;
 }
 
 .empty-state-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 90px;
     height: 90px;
-    background-color: #f5f7ff;
-    border-radius: 50%;
     margin-bottom: 20px;
 }
 
@@ -370,9 +381,11 @@ img{
 .price-amendment-panel {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 16px;
     flex-grow: 1;
     width: 100%;
+    padding: 10px 5px;
+    box-sizing: border-box;
 }
 
 .price-amendment-header {
@@ -382,7 +395,9 @@ img{
     font-size: 1.05rem;
     font-weight: 700;
     color: #2c2a74;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .price-amendment-header .tag-icon {
@@ -412,8 +427,8 @@ img{
 }
 
 .payable-row {
-    margin-top: 2px;
-    padding-top: 6px;
+    margin-top: 4px;
+    padding-top: 12px;
     border-top: 1px dashed #e2e8f0;
 }
 
@@ -441,7 +456,7 @@ img{
     background-color: white;
     height: 32px;
     padding: 0 10px;
-    width: 120px;
+    width: 80px;
     box-sizing: border-box;
 }
 
@@ -463,10 +478,10 @@ img{
 }
 
 .balance-box {
-    margin-top: 6px;
+    margin-top: auto;
     background-color: #f3f0ff;
     border-radius: 8px;
-    padding: 10px 12px;
+    padding: 12px 14px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -549,7 +564,7 @@ img{
 .quantity-subtractor {
     width: 33%;
     height: 100%;
-     background-color: #f8faff;
+    background-color: #f8faff;
     cursor: pointer;
     color: #5544db;
     border: none;
@@ -596,7 +611,7 @@ img{
     background-color: #d7e4f1;
 }
 
-.numpad img{
+.numpad img {
     height: inherit;
 }
 
@@ -909,4 +924,38 @@ img{
 
 .orange-group .span-2 img {
     height: 16px;
+}
+
+.combo-container {
+    position: relative;
+    width: 100%;
+}
+
+.combo-list {
+    top: 36px;
+    position: absolute;
+    width: 100%;
+    overflow-y: auto;
+    max-height: 200px;
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    margin: 4px 0 0 0;
+    display: none;
+    z-index: 999;
+    list-style: none;
+    padding: 0;
+}
+
+.combo-list li {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #1e293b;
+    text-align: left;
+}
+
+.combo-list li:hover {
+    background-color: #f1f5f9;
+    color: #1e3a8a;
 }

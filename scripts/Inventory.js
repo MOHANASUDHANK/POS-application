@@ -1,12 +1,13 @@
-document.addEventListener("DOMContentLoaded", async() => {
+document.addEventListener("DOMContentLoaded", () => {
     const tableBody = document.getElementById("inventory-data");
     const addBtn = document.getElementById("add-btn");
     const reqBtn = document.getElementById("req-btn");
 
-    let data =await getItems();
+    let data = getItems();
 
     let tableHTML = "";
-
+    console.log(data);
+    
     data.forEach(item => {
         let stockClass = "stock-high";
         let statusClass = "in-stock";

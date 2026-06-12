@@ -11,11 +11,17 @@ async function addItem(newItem) {
     data.push(newItem);
     localStorage.setItem('inventoryData', JSON.stringify(data));
 }
+async function getItemsJSON(){
+       let data=null;
+ await fetch('../DB/inventory.json').then(res=>data=res.json()).catch(e=>console.log(e));
+ return data;
+}
 
-
-async function getItems() {
+function getItems() {
    let data=null;
-   await fetch('../DB/inventory.json').then(res=>data=res.json()).catch(e=>console.log(e))
+   data =JSON.parse( localStorage.getItem('inventoryData'));
+//    console.log(data);
+//     fetch('../DB/inventory.json').then(res=>data=res.json()).catch(e=>console.log(e))
     return   data;
 }
 
@@ -33,7 +39,9 @@ async function editItem(editedItem) {
 
 async function getRequests(){
      let data=null;
-   await fetch('../DB/request.json').then(res=>data=res.json()).catch(e=>console.log(e))
+        data =JSON.parse( localStorage.getItem('requestData'));
+
+//    await fetch('../DB/request.json').then(res=>data=res.json()).catch(e=>console.log(e))
     return   data;
 }
 
@@ -65,9 +73,12 @@ async function editRequest(editedRequest){
 
 
 
-async function getRequestItems(){
+ function getRequestItems(){
     let data=null;
-   await fetch('../DB/requestItems.json').then(res=>data=res.json()).catch(e=>console.log(e))
+       data =JSON.parse( localStorage.getItem('requestItemsData'));
+console.log(data);
+
+//    await fetch('../DB/requestItems.json').then(res=>data=res.json()).catch(e=>console.log(e))
     return   data;
 }
 

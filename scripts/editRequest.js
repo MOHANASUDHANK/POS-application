@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded",async () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
     const addItemButton = document.getElementById('add-item-btn');
     const submitButton = document.getElementById('sub-btn');
@@ -13,9 +13,10 @@ document.addEventListener("DOMContentLoaded",async () => {
     const queryParam = new URLSearchParams(window.location.search);
     const id = queryParam.get("id");
 
-    let data =await getRequests();
-    let itemsData =await getRequestItems();
-    let inventoryData =await getItems(); 
+    let data = await getRequests();
+    let itemsData = await getRequestItems();
+    let inventoryData = await getItems();
+    inventoryData = inventoryData.sort((a, b) => a.name.localeCompare(b.name))
 
     const request = data.find(i => i.id == id);
     const requestItems = itemsData.find(i => i.id == id);
@@ -31,16 +32,16 @@ document.addEventListener("DOMContentLoaded",async () => {
     }
 
     const optionsHtml = inventoryData.map(item =>
-        `<option value="${item.name}">${item.name}</option>`
+        `<li>${item.name}</li>`
     ).join('');
 
-    
-    
+
+
     let tableHTML = '';
     if (requestItems) {
         requestItems.data.forEach(item => {
 
-            const invMatch = inventoryData.find(i => i.name==item.name);
+            const invMatch = inventoryData.find(i => i.name == item.name);
 
             // console.log('hi',inventoryData);
             const desc = invMatch.description;
@@ -49,10 +50,12 @@ document.addEventListener("DOMContentLoaded",async () => {
             tableHTML += `
             <tr>
                 <td>
-                    <select class="item-name">
-                        <option disabled>Select Name</option>
-                        ${inventoryData.map(i => `<option value="${i.name}" ${i.name === item.name ? 'selected' : ''}>${i.name}</option>`).join('')}
-                    </select>
+                     <div class="combo-container">
+                    <input type="text" class="combo-input item-name" placeholder="Enter Name" value="${item.name}" autocomplete="off" required>
+                        <ul class="combo-list">
+                        ${optionsHtml}
+                    </ul>
+                    </div>
                 </td>
                 <td>
                     <textarea class="item-desc" readonly>${desc}</textarea>
@@ -80,10 +83,13 @@ document.addEventListener("DOMContentLoaded",async () => {
         let newRowHTML = `
             <tr>
                 <td>
-                    <select class="item-name">
-                        <option disabled selected>Select Name</option>
-                        ${optionsHtml}
-                    </select>
+                <div class="combo-container">
+                <input type="text" class="combo-input item-name" placeholder="Enter Name" autocomplete="off" required>
+                
+                <ul class="combo-list">
+                    ${optionsHtml}
+                </ul>
+            </div>
                 </td>
                 <td>
                     <textarea class="item-desc" readonly></textarea>
@@ -106,20 +112,71 @@ document.addEventListener("DOMContentLoaded",async () => {
     });
 
 
-    tableBody.addEventListener('change', (e) => {
-        if (e.target.classList.contains('item-name')) {
-            const name = e.target.value;
-            const row = e.target.closest('tr');
+    tableBody.addEventListener('click', (e) => {
+        if (e.target.classList.contains('combo-input')) {
+            const container = e.target.closest('.combo-container');
+            const list = container.querySelector('.combo-list');
+            const items = list.querySelectorAll('li');
+            const enteredString = e.target.value.toLowerCase().trim();
+            document.querySelectorAll('.combo-list').forEach(list => {
+                list.style.display = 'none';
+            }); 
+            list.style.display = 'block';
+            console.log(container,list,items);
+            items.forEach(item => {
+                let match = item.innerText.toLowerCase().includes(enteredString);
+                item.style.display = match ? 'block' : 'none';
+            });
+        }
+    });
 
+    tableBody.addEventListener('click', (e) => {
+        if (e.target.tagName === 'LI') {
+            const li = e.target;
+            const container = li.closest('.combo-container');
+            const input = container.querySelector('.combo-input');
+            const list = container.querySelector('.combo-list');
+
+            input.value = li.innerText;
+            const name = input.value;
+            list.style.display = 'none';
+
+            const row = li.closest('tr');
             const descField = row.querySelector('.item-desc');
             const unitField = row.querySelector('.item-unit');
 
-            const item = inventoryData.find(i => i.name === name);
+            const item = inventoryData.find(i => i.name == name);
 
             if (item) {
-                descField.value = item.description || '';
-                unitField.value = item.unit || '';
+                descField.value = item.description;
+                unitField.value = item.unit;
             }
+        }
+    });
+
+    tableBody.addEventListener('input', (e) => {
+        if (e.target.classList.contains('combo-input')) {
+            const container = e.target.closest('.combo-container');
+            const list = container.querySelector('.combo-list');
+            const items = list.querySelectorAll('li');
+            const enteredString = e.target.value.toLowerCase().trim();
+
+            list.style.display = 'block';
+
+            items.forEach(item => {
+                let match = item.innerText.toLowerCase().includes(enteredString);
+                item.style.display = match ? 'block' : 'none';
+            });
+
+        
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if(!e.target.closest('.combo-container')){
+            document.querySelectorAll('.combo-list').forEach(list => {
+                list.style.display = 'none';
+            }); 
         }
     });
 

@@ -284,13 +284,13 @@ font-weight: 700;
 
 
 td:nth-child(8) span{
-    padding: 5px;
+    padding: 1px;
     border-radius: 5px;
 }
 
 td{
     font-weight: 700;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .stock-high {

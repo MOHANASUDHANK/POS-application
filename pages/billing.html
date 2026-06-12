@@ -19,7 +19,7 @@
         </div>
         <div class="sidebar-content">
             <ul class="nav-menu">
-                <a href="billing.html" >
+                <a href="billing.html">
                     <li class="active-tab">Billing</li>
                 </a>
                 <a href="Inventory.html">
@@ -77,28 +77,35 @@
         <div class="main-grid">
             <div class="left-panel">
                 <div class="card bill-details-panel">
-                    <div class="bill-header-row">
-                        <span class="header-col item-col">Item</span>
-                        <span class="header-col qty-col">Qty</span>
-                        <span class="header-col price-col">Unit Price</span>
-                        <span class="header-col total-col">Total</span>
-                    </div>
+                    <div class="bill-items-container" id="bill-items-container">
+                        <div class="bill-header-row">
+                            <span class="header-col item-col">Item</span>
+                            <span class="header-col qty-col">Qty</span>
+                            <span class="header-col price-col">Unit Price</span>
+                            <span class="header-col total-col">Total</span>
+                        </div>
 
-                    <div class="bill-items-container">
-                        <div class="empty-bill-state"style="display: none;" >
+                        <div class="empty-bill-state">
+                            <div class="empty-state-icon">
+                                <img src="../asserts/bill.png">
+                            </div>
                             <h3 class="empty-state-title">No items added yet</h3>
                             <p class="empty-state-subtitle">Select items from the menu to add to the bill</p>
                         </div>
-                        <div class="bill-items-list" >
+                        <div class="bill-items-list">
+                        </div>
+                        <div class="bill-instruction hidden">
+                            <img src="../asserts/icons8-info-24.png">
+                            <div>
+                                <p>Click item to create billing entry. If item already exits,quantity will increase.</p>
+                                <p>Cancel items removes the last biled item. Delete all clears local data.</p>
+                                <p>Main menu will redirect to menu page.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="bill-instruction">
-                        <p>Click item to create billing entry. If item already exits,quantity will increase.</p>
-                        <p>Cancel items removes the last biled item. Delete all clears local data.</p>
-                        <p>Main menu will redirect to menu page.</p>
-                    </div>
 
-                    <div class="price-amendment-panel" style="display: none;">
+
+                    <div class="price-amendment-panel hidden" id="price-amendment-panel">
                         <div class="price-amendment-header">
 
                             <span>Price Amendment</span>
@@ -106,29 +113,29 @@
 
                         <div class="amendment-row">
                             <span class="amendment-label">Total Amount</span>
-                            <span class="amendment-value">$0</span>
+                            <span class="amendment-value" id="amendment-total-amount">$0.00</span>
                         </div>
                         <div class="amendment-row">
-                            <span class="amendment-label">GST Amount (7%)</span>
-                            <span class="amendment-value">$0</span>
+                            <span class="amendment-label">GST Amount (18%)</span>
+                            <span class="amendment-value" id="amendment-gst-amount">$0.00</span>
                         </div>
 
                         <div class="amendment-row payable-row">
                             <span class="amendment-label large-label">Payable</span>
-                            <span class="amendment-value purple-value large-value">$0</span>
+                            <span class="amendment-value purple-value large-value" id="amendment-payable">$0.00</span>
                         </div>
 
                         <div class="amendment-row tender-row">
                             <span class="amendment-label">Tender</span>
                             <div class="tender-input-wrapper">
                                 <span class="tender-prefix">$</span>
-                                <input type="text" value="0" class="tender-input">
+                                <input type="text"id="amendment-tender-input" class="tender-input">
                             </div>
                         </div>
 
                         <div class="amendment-row balance-box">
                             <span class="amendment-label balance-label">Change (Balance)</span>
-                            <span class="amendment-value balance-value">$0.0</span>
+                            <span class="amendment-value balance-value" id="amendment-balance-value">$0.00</span>
                         </div>
                     </div>
                 </div>
@@ -136,9 +143,10 @@
                 <div class="card bill-calculator">
                     <div class="calculator-top-row">
                         <div class="input-item-no-getter">
-                            <label class="input-item-no-getter-box-label">Item Number</label>
-                            <div class="input-box-no">
-                                <input type="text" class="itemNoInput"placeholder="Scan / Enter item number" autofocus>
+                            <label class="input-item-no-getter-box-label">Item Name</label>
+                            <div class="input-box-no combo-container">
+                                <input type="text" class="itemNoInput" placeholder="Scan / Enter item name"  autofocus>
+                                <ul class="combo-list" id="billing-combo-list"></ul>
                             </div>
                         </div>
                         <div class="input-item-quantity-getter">
@@ -164,7 +172,7 @@
                             </div>
                             <div class="table-cover">
                                 <label>No of cover</label>
-                                <input type="text"class="coverNoInput" placeholder="Enter no of cover">
+                                <input type="text" class="coverNoInput" placeholder="Enter no of cover">
                             </div>
                         </div>
                         <div class="numpad">
@@ -179,7 +187,8 @@
                             <button class="numpad-btn" value="3">3</button>
                             <button class="numpad-btn" value="0">0</button>
                             <button class="numpad-btn" value=".">.</button>
-                            <button class="numpad-btn backspace" value="c"><img src="../asserts/icons8-backspace-32.png"> </button>
+                            <button class="numpad-btn backspace" value="c"><img
+                                    src="../asserts/icons8-backspace-32.png"> </button>
                         </div>
                         <div class="input-field-functions">
                             <button class="action-btn ac-btn" id="input-allclear-btn">AC</button>
@@ -189,7 +198,7 @@
                 </div>
             </div>
             <div class="card category-panel" id="category-panel">
-                <button class="category-btn" data-category="Beverage" >
+                <button class="category-btn" data-category="Beverage">
                     <img src="../asserts/icons8-milkshake-50.png">
                     <span>Beverage</span>
                 </button>
@@ -230,17 +239,17 @@
                             <div class="item-name">Coffee Black</div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
         <div class="bottom-container">
             <div class="bottom-group purple-group">
-                <button class="action-btn-large">
+                <button class="action-btn-large" id="new-bill-btn">
                     <img src="../asserts/icons8-add-50.png">
                     <span>New Bill</span>
                 </button>
-                <button class="action-btn-large">
+                <button class="action-btn-large" id="price-amendment-btn">
                     <img src="../asserts/icons8-price-tag-50.png">
                     <span>Price Amendment</span>
                 </button>

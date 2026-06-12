@@ -1,9 +1,11 @@
-document.addEventListener("DOMContentLoaded",async () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
     const uploadBox = document.getElementById('uploadBox');
     const fileInput = document.getElementById('file-upload');
     const stateEmpty = document.getElementById('stateEmpty');
     const statePreview = document.getElementById('statePreview');
+    const stockField = document.getElementById('stock');
+    const statusField = document.getElementById('status');
     const imgPreview = document.getElementById('imgPreview');
     const editForm = document.getElementById('edit-form');
     const deleteButton = document.getElementById('delete-modal-confirm');
@@ -25,12 +27,13 @@ document.addEventListener("DOMContentLoaded",async () => {
         document.getElementById("category").value = item.category;
         document.getElementById("description").value = item.description;
         document.getElementById("price").value = item.price;
-        document.getElementById("inStock").value = item.stock;
+        document.getElementById("stock").value = item.stock;
         document.getElementById("status").value = item.status;
         document.getElementById("imgPreview").src = item.image;
         document.getElementById("unit").value = item.unit;
         imageString = item.image;
     }
+
 
 
     console.log(typeof (id));
@@ -48,6 +51,17 @@ document.addEventListener("DOMContentLoaded",async () => {
         processFile(fileInput.files[0]);
 
     });
+    stockField.addEventListener('input', () => {
+        if (stockField.value > 25) {
+            statusField.value = 'In Stock';
+        }
+        else if (stockField.value > 0) {
+            statusField.value = 'Low Stock';
+        }
+        else {
+            statusField.value = 'Out Of Stock';
+        }
+    })
 
     function processFile(file) {
         if (objectUrl) {
@@ -96,7 +110,7 @@ document.addEventListener("DOMContentLoaded",async () => {
 
     deleteButton.addEventListener('click', () => {
         deleteItem(id);
-        window.location.href='inventory.html'
+        window.location.href = 'inventory.html'
     });
 
     if (cancelButton) {

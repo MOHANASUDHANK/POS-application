@@ -88,11 +88,12 @@ body {
     border: none;
     display: block;
 }
-.hide{
+
+.hide {
     display: none !important;
 }
 
-.modal{
+.modal {
     position: fixed;
     z-index: 1;
     left: 0;
@@ -104,7 +105,8 @@ body {
     align-items: center;
     justify-content: center;
 }
-.model-content{
+
+.model-content {
     background: white;
     width: 350px;
     padding: 20px 0px;
@@ -116,51 +118,55 @@ body {
     gap: 8px;
 }
 
-.confirm{
+.confirm {
     border-radius: 50%;
     background-color: rgba(0, 128, 0, 0.202);
     width: 70px;
     height: 70px;
 }
 
-.delete{
+.delete {
     border-radius: 50%;
     background-color: rgba(251, 137, 137, 0.449);
     width: 70px;
     height: 70px;
 }
-.delete img{
+
+.delete img {
     margin: 10px 10px;
 }
-.confirm img{
-   margin: 14px 10px;
-   height: 40px;
+
+.confirm img {
+    margin: 14px 10px;
+    height: 40px;
 }
 
-.model-message{
+.model-message {
     text-align: center;
     padding: 0 24px;
 }
-.model-message h2{
+
+.model-message h2 {
     font-size: medium;
     padding: 4px;
 }
-.model-message p{
+
+.model-message p {
     font-size: 0.75rem;
     color: rgba(0, 0, 0, 0.571);
     font-weight: 600;
 }
 
-.model-btns{
+.model-btns {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
     margin-top: 10px;
 }
 
-.model-btns img{
+.model-btns img {
     height: 20px;
-    filter:brightness(0) invert(1);
+    filter: brightness(0) invert(1);
 }
 
 
@@ -246,6 +252,6 @@ body {
     background-color: #1d1ab3;
 }
 
-.submitted img{
+.submitted img {
     height: 56px;
 }

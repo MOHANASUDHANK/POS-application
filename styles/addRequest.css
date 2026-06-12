@@ -8,7 +8,7 @@
 
 body {
     background-color: rgb(238, 242, 252);
-        user-select: none;
+    user-select: none;
 
 }
 
@@ -24,8 +24,8 @@ body {
     flex-grow: 1;
     padding: 10px;
     gap: 10px;
-    height: 100vh; 
-    overflow: hidden; 
+    height: 100vh;
+    overflow: hidden;
 }
 
 .req-info {
@@ -90,10 +90,10 @@ body {
 
 .items-panel {
     padding: 16px;
-    display: flex; 
-    flex-direction: column; 
-    flex: 1; 
-    min-height: 0; 
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
 }
 
 .panel-header {
@@ -136,9 +136,9 @@ body {
 
 .table-responsive {
     width: 100%;
-    flex: 1; 
+    flex: 1;
     overflow-y: auto;
-    min-height: 0; 
+    min-height: 0;
     margin-bottom: 16px;
 }
 
@@ -147,7 +147,7 @@ body {
     border-collapse: collapse;
     text-align: left;
     /* min-height: 400px; */
-    
+
 }
 
 .items-table th {
@@ -260,4 +260,49 @@ body {
 
 ::placeholder {
     color: #94a3b8;
+}
+
+.combo-container {
+
+    position: relative;
+    width: 100%;
+}
+
+.combo-input {
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #334155;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 10px 30px 10px 14px;
+    height: 42px;
+    box-sizing: border-box;
+}
+
+
+.combo-list {
+    top: 48px;
+    position: absolute;
+    width: 100%;
+    overflow-y: auto;
+    max-height: 30vh;
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    margin: 4px 0 0 0;
+    display: none;
+    z-index: 10;
+}
+
+.combo-list li {
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.combo-list li:hover {
+    background-color: #f1f5f9;
+    color: #1e3a8a;
 }
