@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Sales Report</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/report.css">
-    <link rel="stylesheet" href="../styles/sidePanel.css">  
-        <link rel="stylesheet" href="../styles/topPanel.css">
+    <link rel="stylesheet" href="../styles/sidePanel.css">
+    <link rel="stylesheet" href="../styles/topPanel.css">
 
 </head>
+
 <body>
     <aside class="sidebar">
         <div class="main-logo">
@@ -44,7 +46,9 @@
     </aside>
     <div class="report-container">
         <div class="header">
-            <div class="main-header"><h1>☰ Sales Report</h1></div>
+            <div class="main-header">
+                <h1>☰ Sales Report</h1>
+            </div>
             <div class="date-time-container card">
                 <div class="day-container">
                     <img src="../asserts/icons8-date-24.png">
@@ -58,26 +62,31 @@
         </div>
         <div class="filter-panel card">
             <div class="filter-group">
-                <label>Items</label>
-                <input type="text" placeholder="Enter Item">
+                <div class="input-box-no combo-container">
+                    <label>Item</label>
+                    <input type="text" class="itemNameInput" placeholder="Enter item name" autofocus>
+                    <ul class="combo-list" id="combo-list" style="display: none;"></ul>
+                </div>
             </div>
             <div class="filter-group">
-                <div class="middle"><div>
-                    <label>Reported Date</label>
-                    <div class="filter-period">
-                        <button type="button" class="active">Today</button>
-                        <button type="button">Yesterday</button>
-                        <button type="button">This Week</button>
-                        <button type="button">This Month</button>
-                        <button type="button">Custom</button>
-                    </div></div>
-                    <div class="bottom-period">
+                <div class="middle">
+                    <div>
+                        <label>Reported Date</label>
+                        <div class="filter-period">
+                            <button type="button" class="active">Today</button>
+                            <button type="button">Yesterday</button>
+                            <button type="button">This Week</button>
+                            <button type="button">This Month</button>
+                            <button type="button" class="custom">Custom</button>
+                        </div>
+                    </div>
+                    <div class="custom-period hidden">
                         <div>
                             <label>Date From</label>
-                            <input type="date" value="2026-05-27">
+                            <input type="date" id="fromDate" value="2026-05-27">
                         </div>
                         <div><label>Date To</label>
-                            <input type="date" value="2026-05-27">
+                            <input type="date" id="toDate" value="2026-05-27">
                         </div>
                     </div>
                 </div>
@@ -104,16 +113,18 @@
                     </button>
                 </div>
             </div>
-            <table class="report-table">
-                <thead>
-                    <tr>
-                        <th>Item Name<img src="../asserts/icons8-up-down-64.png"></th>
-                        <th>Sold Quantity <img src="../asserts/icons8-up-down-64.png"></th>
-                        <th>Total Price<img src="../asserts/icons8-up-down-64.png"></th>
-                    </tr>
-                </thead>
-                <tbody id="report-data"></tbody>
-            </table>
+            <div class="table-wrapper">
+                <table class="report-table">
+                    <thead>
+                        <tr>
+                            <th>Item Name<img src="../asserts/icons8-up-down-64.png"></th>
+                            <th>Sold Quantity <img src="../asserts/icons8-up-down-64.png"></th>
+                            <th>Total Price<img src="../asserts/icons8-up-down-64.png"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="report-data"></tbody>
+                </table>
+            </div>
             <div class="table-footer">
                 <div class="left-container">
                     <span>Show</span>
@@ -139,6 +150,7 @@
     </div>
 
     <script src="../scripts/report.js" defer></script>
+    <script src="../scripts/DB.js"></script>
 </body>
 
 </html>

@@ -60,24 +60,30 @@
         </div>
         <div class="filter-panel card">
             <div class="filter-group">
-                <label>Request ID</label>
-                <input type="text" placeholder="Enter Request ID" id="id">
+                <div class="input-box-no combo-container">
+                    <label>Request ID</label>
+                    <input type="text" placeholder="Enter Request ID" id="id" autocomplete="off">
+                    <ul class="combo-list id-combo-list" style="display: none;"></ul>
+                </div>
             </div>
             <div class="filter-group">
                 <label>Subject</label>
                 <input type="text" placeholder="Enter Subject" id="subject">
             </div>
             <div class="filter-group">
-                <label>Requested By</label>
-                <input type="text" placeholder="Requested By" id="requested-by">
+                <div class="input-box-no combo-container">
+                    <label>Requested By</label>
+                    <input type="text" placeholder="Requested By" id="requested-by" autocomplete="off">
+                    <ul class="combo-list requestedBy-combo-list" style="display: none;"></ul>
+                </div>
             </div>
             <div class="filter-group">
                 <label>Requested Date From</label>
-                <input type="date" value="2026-06-02">
+                <input type="date" id="fromDate" >
             </div>
             <div class="filter-group">
                 <label>Requested Date To</label>
-                <input type="date" value="2026-06-03">
+                <input type="date" id="toDate">
             </div>
             <div class="filter-actions">
                 <button class="filter-btn active">

@@ -10,92 +10,11 @@
     </style>
 </head>
 <body>
-  <div style="position: relative; width: 200px;">
-  <input type="text" id="box" placeholder="Select Browser..." 
-         style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
   
-  <span style="position: absolute; right: 10px; top: 12px; color: #666;">▼</span>
-
-  <ul id="list" style="position: absolute; width: 100%; overflow: auto; max-height: 20vh; background: white; border: 1px solid #ccc; 
-                       border-radius: 4px; padding: 0; margin: 5px 0; display: none; list-style: none;">
-    
-    <li style="padding: 10px; cursor: pointer;">Chrome</li>
-    <li style="padding: 10px; cursor: pointer;">Firefox</li>
-    <li style="padding: 10px; cursor: pointer;">Safari</li>
-    <li style="padding: 10px; cursor: pointer;">Edgwe</li>
-    <li style="padding: 10px; cursor: pointer;">Edgee</li>
-    <li style="padding: 10px; cursor: pointer;">Edget</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Edsge</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Edege</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Edgee</li>
-    <li style="padding: 10px; cursor: pointer;">Edgxe</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Ezdge</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li><li style="padding: 10px; cursor: pointer;">Chrome</li>
-    <li style="padding: 10px; cursor: pointer;">Firefox</li>
-    <li style="padding: 10px; cursor: pointer;">Safari</li>
-    <li style="padding: 10px; cursor: pointer;">Edgwe</li>
-    <li style="padding: 10px; cursor: pointer;">Edgee</li>
-    <li style="padding: 10px; cursor: pointer;">Edget</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Edsge</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Edege</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Edgee</li>
-    <li style="padding: 10px; cursor: pointer;">Edgxe</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Ezdge</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li><li style="padding: 10px; cursor: pointer;">Chrome</li>
-    <li style="padding: 10px; cursor: pointer;">Firefox</li>
-    <li style="padding: 10px; cursor: pointer;">Safari</li>
-    <li style="padding: 10px; cursor: pointer;">Edgwe</li>
-    <li style="padding: 10px; cursor: pointer;">Edgee</li>
-    <li style="padding: 10px; cursor: pointer;">Edget</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Edsge</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Edege</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Edgee</li>
-    <li style="padding: 10px; cursor: pointer;">Edgxe</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-    <li style="padding: 10px; cursor: pointer;">Ezdge</li>
-    <li style="padding: 10px; cursor: pointer;">Edge</li>
-
-  </ul>
-
-</div>
 <h2>welcome to the home</h2>
 
 <script>
-  const box = document.getElementById('box');
-  const list = document.getElementById('list');
-  const items = list.getElementsByTagName('li');
-
-  box.onclick = () => list.style.display = 'block';
-
-  document.onclick = (e) => { if(!e.target.closest('div')) list.style.display = 'none'; }
-
-  box.oninput = () => {
-    for (let item of items) {
-      let match = item.innerText.toLowerCase().includes(box.value.toLowerCase());
-      item.style.display = match ? 'block' : 'none';
-    }
-  };
-
-  for (let item of items) {
-    item.onclick = () => { box.value = item.innerText; list.style.display = 'none'; }
-  }
+  console.log( Date().getWeek())
 </script>
 </body>
 </html>

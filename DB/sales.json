@@ -1,0 +1,87 @@
+[
+  {
+    "id": "BILL-000001",
+    "createdAt": "12 May 2026 01:15 AM",
+    "totalAmount": "19"
+  },
+  {
+    "id": "BILL-000002",
+    "createdAt": "18 May 2026 09:30 AM",
+    "totalAmount": "13"
+  },
+  {
+    "id": "BILL-000003",
+    "createdAt": "24 May 2026 02:45 PM",
+    "totalAmount": "14"
+  },
+  {
+    "id": "BILL-000004",
+    "createdAt": "30 May 2026 06:15 PM",
+    "totalAmount": "21"
+  },
+  {
+    "id": "BILL-000005",
+    "createdAt": "01 Jun 2026 08:30 AM",
+    "totalAmount": "11"
+  },
+  {
+    "id": "BILL-000006",
+    "createdAt": "03 Jun 2026 12:15 PM",
+    "totalAmount": "21"
+  },
+  {
+    "id": "BILL-000007",
+    "createdAt": "05 Jun 2026 04:40 PM",
+    "totalAmount": "15.5"
+  },
+  {
+    "id": "BILL-000008",
+    "createdAt": "07 Jun 2026 11:10 AM",
+    "totalAmount": "14"
+  },
+  {
+    "id": "BILL-000009",
+    "createdAt": "08 Jun 2026 06:20 PM",
+    "totalAmount": "25"
+  },
+  {
+    "id": "BILL-000010",
+    "createdAt": "09 Jun 2026 03:05 PM",
+    "totalAmount": "11.5"
+  },
+  {
+    "id": "BILL-000011",
+    "createdAt": "10 Jun 2026 09:15 AM",
+    "totalAmount": "23"
+  },
+  {
+    "id": "BILL-000012",
+    "createdAt": "11 Jun 2026 01:50 PM",
+    "totalAmount": "12"
+  },
+  {
+    "id": "BILL-000013",
+    "createdAt": "11 Jun 2026 07:30 PM",
+    "totalAmount": "24"
+  },
+  {
+    "id": "BILL-000014",
+    "createdAt": "12 Jun 2026 10:15 AM",
+    "totalAmount": "14.5"
+  },
+  {
+    "id": "BILL-000015",
+    "createdAt": "12 Jun 2026 02:40 PM",
+    "totalAmount": "17"
+  },
+  {
+    "id": "BILL-000016",
+    "createdAt": "12 Jun 2026 04:30 PM",
+    "totalAmount": "43"
+  },
+  {
+    "id": "BILL-000017",
+    "createdAt": "11 Jun 2026 03:20 PM",
+    "totalAmount": "49"
+  }
+]

@@ -119,14 +119,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     itemNoInput.addEventListener('click', () => {
         activeInputField = itemNoInput;
-        console.log(activeInputField);
-        const enteredString = itemNoInput.value.toLowerCase().trim();
-        const items = billingComboList.querySelectorAll('li');
         billingComboList.style.display = 'block';
-        // items.forEach(item => {
-        //     let match = item.innerText.toLowerCase().startsWith(enteredString);
-        //     item.style.display = match ? 'block' : 'none';
-        // });
+      
     })
 
     itemNoInput.addEventListener('input', (e) => {
@@ -134,8 +128,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         const items = billingComboList.querySelectorAll('li');
         billingComboList.style.display = 'block';
         items.forEach(item => {
-            let match = item.innerText.toLowerCase().includes(enteredString);
-            item.style.display = match ? 'block' : 'none';
+            let isMatched = item.innerText.toLowerCase().includes(enteredString);
+            item.style.display = isMatched ? 'block' : 'none';
         });
     });
 

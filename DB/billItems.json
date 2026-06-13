@@ -1,0 +1,278 @@
+[
+  {
+    "billID": "BILL-000001",
+    "quantity": "2",
+    "name": "Tea",
+    "price": "5"
+  },
+  {
+    "billID": "BILL-000001",
+    "quantity": "1",
+    "name": "Water",
+    "price": "5"
+  },
+  {
+    "billID": "BILL-000001",
+    "quantity": "2",
+    "name": "Coffee",
+    "price": "2"
+  },
+  {
+    "billID": "BILL-000002",
+    "quantity": "1",
+    "name": "Char Siu Bao",
+    "price": "3"
+  },
+  {
+    "billID": "BILL-000002",
+    "quantity": "2",
+    "name": "Xiaolongbao",
+    "price": "5"
+  },
+  {
+    "billID": "BILL-000003",
+    "quantity": "2",
+    "name": "Shengjian Bao",
+    "price": "4"
+  },
+  {
+    "billID": "BILL-000003",
+    "quantity": "3",
+    "name": "Gua Bao",
+    "price": "2"
+  },
+  {
+    "billID": "BILL-000004",
+    "quantity": "1",
+    "name": "Beef Bao",
+    "price": "5"
+  },
+  {
+    "billID": "BILL-000004",
+    "quantity": "1",
+    "name": "Brown Mantou",
+    "price": "10"
+  },
+  {
+    "billID": "BILL-000004",
+    "quantity": "2",
+    "name": "Custard Bun",
+    "price": "3"
+  },
+  {
+    "billID": "BILL-000005",
+    "quantity": "3",
+    "name": "Flower Roll",
+    "price": "1"
+  },
+  {
+    "billID": "BILL-000005",
+    "quantity": "1",
+    "name": "Salted Egg Bun",
+    "price": "5"
+  },
+  {
+    "billID": "BILL-000005",
+    "quantity": "1",
+    "name": "Custard Bun",
+    "price": "3"
+  },
+  {
+    "billID": "BILL-000006",
+    "quantity": "3",
+    "name": "Ramen",
+    "price": "2"
+  },
+  {
+    "billID": "BILL-000006",
+    "quantity": "5",
+    "name": "Pho",
+    "price": "3"
+  },
+  {
+    "billID": "BILL-000007",
+    "quantity": "3",
+    "name": "Pad Thai",
+    "price": "1.5"
+  },
+  {
+    "billID": "BILL-000007",
+    "quantity": "2",
+    "name": "Dan Dan Noodles",
+    "price": "3"
+  },
+  {
+    "billID": "BILL-000007",
+    "quantity": "1",
+    "name": "Jajangmyeon",
+    "price": "5"
+  },
+  {
+    "billID": "BILL-000008",
+    "quantity": "2",
+    "name": "Spaghetti Carbonara",
+    "price": "4"
+  },
+  {
+    "billID": "BILL-000008",
+    "quantity": "3",
+    "name": "Chow Mein",
+    "price": "2"
+  },
+  {
+    "billID": "BILL-000009",
+    "quantity": "3",
+    "name": "Laksa",
+    "price": "5"
+  },
+  {
+    "billID": "BILL-000009",
+    "quantity": "10",
+    "name": "Banana bread",
+    "price": "1"
+  },
+  {
+    "billID": "BILL-000010",
+    "quantity": "2",
+    "name": "Croissants",
+    "price": "2"
+  },
+  {
+    "billID": "BILL-000010",
+    "quantity": "5",
+    "name": "Cinnamon Rolls",
+    "price": "1.5"
+  },
+  {
+    "billID": "BILL-000011",
+    "quantity": "3",
+    "name": "Cheesecake",
+    "price": "5"
+  },
+  {
+    "billID": "BILL-000011",
+    "quantity": "2",
+    "name": "Apple Pie",
+    "price": "4"
+  },
+  {
+    "billID": "BILL-000012",
+    "quantity": "6",
+    "name": "Chocolate Brownies",
+    "price": "2"
+  },
+  {
+    "billID": "BILL-000013",
+    "quantity": "3",
+    "name": "Pizza",
+    "price": "8"
+  },
+  {
+    "billID": "BILL-000014",
+    "quantity": "3",
+    "name": "Taro Bao",
+    "price": "1.5"
+  },
+  {
+    "billID": "BILL-000014",
+    "quantity": "2",
+    "name": "Beef Bao",
+    "price": "5"
+  },
+  {
+    "billID": "BILL-000015",
+    "quantity": "3",
+    "name": "Xiaolongbao",
+    "price": "5"
+  },
+  {
+    "billID": "BILL-000015",
+    "quantity": "1",
+    "name": "Gua Bao",
+    "price": "2"
+  },
+  {
+    "billID": "BILL-000016",
+    "quantity": "2",
+    "name": "Char Siu Bao",
+    "price": "3"
+  },
+  {
+    "billID": "BILL-000016",
+    "quantity": "3",
+    "name": "Shengjian Bao",
+    "price": "4"
+  },
+  {
+    "billID": "BILL-000016",
+    "quantity": "2",
+    "name": "Custard Bun",
+    "price": "3"
+  },
+  {
+    "billID": "BILL-000016",
+    "quantity": "1",
+    "name": "Salted Egg Bun",
+    "price": "5"
+  },
+  {
+    "billID": "BILL-000016",
+    "quantity": "2",
+    "name": "Red Bean Bun",
+    "price": "4"
+  },
+  {
+    "billID": "BILL-000016",
+    "quantity": "3",
+    "name": "Lotus Seed Bun",
+    "price": "2"
+  },
+  {
+    "billID": "BILL-000017",
+    "quantity": "2",
+    "name": "Ramen",
+    "price": "2"
+  },
+  {
+    "billID": "BILL-000017",
+    "quantity": "3",
+    "name": "Pho",
+    "price": "3"
+  },
+  {
+    "billID": "BILL-000017",
+    "quantity": "2",
+    "name": "Pad Thai",
+    "price": "1.5"
+  },
+  {
+    "billID": "BILL-000017",
+    "quantity": "1",
+    "name": "Dan Dan Noodles",
+    "price": "3"
+  },
+  {
+    "billID": "BILL-000017",
+    "quantity": "2",
+    "name": "Jajangmyeon",
+    "price": "5"
+  },
+  {
+    "billID": "BILL-000017",
+    "quantity": "1",
+    "name": "Spaghetti Carbonara",
+    "price": "4"
+  },
+  {
+    "billID": "BILL-000017",
+    "quantity": "3",
+    "name": "Chow Mein",
+    "price": "2"
+  },
+  {
+    "billID": "BILL-000017",
+    "quantity": "2",
+    "name": "Laksa",
+    "price": "5"
+  }
+]

@@ -97,5 +97,16 @@ async function editRequestItems(newRequestItems){
     const index =await data.findIndex(requestItem => requestItem.id === newRequestItems.id);
     data[index] = newRequestItems;
     localStorage.setItem('requestItemsData',JSON.stringify(data));
-    
+}
+
+async function getBills(){
+    let data = null;
+    await fetch('../DB/sales.json').then(res=>data=res.json()).catch(e=>console.log(e))
+    return data;
+}
+
+async function getBillItems(){
+    let data = null;
+  await   fetch('../DB/billItems.json').then(res=>data=res.json())
+    return data;
 }
