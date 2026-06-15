@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../styles/itemRequest.css">
     <link rel="stylesheet" href="../styles/sidePanel.css">
         <link rel="stylesheet" href="../styles/topPanel.css">
+        <link href="https://cdn.datatables.net/2.3.8/css/dataTables.dataTables.css" >
+    <link rel="stylesheet" href="../styles/dataTable.css">
 
 </head>
 
@@ -111,7 +113,7 @@
                     </button>
                 </div>
             </div>
-            <table class="request-table">
+            <table id="request-table" class="request-table">
                 <thead>
                     <tr>
                         <th>Request Id <img src="../asserts/icons8-up-down-64.png"></th>
@@ -125,31 +127,16 @@
                 </thead>
                 <tbody id="request-data"></tbody>
             </table>
-            <div class="table-footer">
-                <div class="left-container">
-                    <span>Show</span>
-                    <select>
-                        <option>10</option>
-                        <option>25</option>
-                        <option>50</option>
-                    </select>
-                    <span>entries</span>
-                </div>
-                <div class="middle-container">
-                    <div>&lt;</div>
-                    <div class="active">1</div>
-                    <div>2</div>
-                    
-                    <div>&gt;</div>
-                </div>
-                <div class="right-container">
-                    <span>Showing 10 of 12 requests</span>
-                </div>
-            </div>
+            
         </div>
     </div>
     <script src="../scripts/DB.js"></script>
-    <script src="../scripts/itemRequest.js" defer></script>
+    <script src="../scripts/itemRequest.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/2.3.8/js/dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.0.2/js/dataTables.buttons.js"></script>
+<script src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.html5.min.js"></script>
 </body>
 
 </html>

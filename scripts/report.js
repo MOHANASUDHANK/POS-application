@@ -174,8 +174,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             quantity: sales.get(item.name).quantity + parseInt(item.quantity),
             totalPrice: sales.get(item.name).totalPrice + parseInt(item.quantity) * parseInt(item.price)
         });
-
-
     });
 
 

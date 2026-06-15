@@ -1,0 +1,53 @@
+.dt-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.table-wrapper{
+    display: flex;
+}
+
+.custom-bottom-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+    margin-top: auto;
+    color: rgb(32, 32, 177);
+}
+
+
+.dt-layout-table {
+    margin-bottom: auto; 
+    display: flex;
+    width: 100%;
+}
+
+.dt-layout-full{
+    width: 100%;
+}
+
+.custom-bottom-wrapper select{
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.116);
+}
+
+.dt-paging{
+    display: flex;
+    gap: 20px;
+}
+
+.dt-paging-button{
+    padding:6px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.116);
+    background-color: white;
+    margin: 4px;
+    color: rgb(32, 32, 177);
+}
+
+.dt-info{
+    font-size :0.9rem;;
+}
