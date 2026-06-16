@@ -148,6 +148,11 @@ document.addEventListener("DOMContentLoaded", () => {
         table.draw();
     });
 
+    table.on('draw',function(){
+        const count = table.rows({filter:'applied'}).count();
+        document.getElementById('total-count').innerText=`Total ${count} Item found`
+    })
+
     addBtn.addEventListener('click', () => {
         window.location.href = `addInventory.html`;
     });

@@ -8,8 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/itemRequest.css">
     <link rel="stylesheet" href="../styles/sidePanel.css">
-        <link rel="stylesheet" href="../styles/topPanel.css">
-        <link href="https://cdn.datatables.net/2.3.8/css/dataTables.dataTables.css" >
+    <link rel="stylesheet" href="../styles/topPanel.css">
+    <link href="https://cdn.datatables.net/2.3.8/css/dataTables.dataTables.css" >
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/2.3.8/css/dataTables.dataTables.css"> -->
     <link rel="stylesheet" href="../styles/dataTable.css">
 
 </head>
@@ -100,7 +101,11 @@
             <div class="list-header">
                 <div class="header-container">
                     <h2>Item Request List</h2>
-                    <span>Total 12 request</span>
+                    <span id="total-count">Total 8 request</span>
+                </div>
+                <div>
+                    <h>Search</h>
+                    <input type="text">
                 </div>
                 <div class="functionality-button">
                     <button class="add-btn" id="add-btn">
@@ -116,12 +121,12 @@
             <table id="request-table" class="request-table">
                 <thead>
                     <tr>
-                        <th>Request Id <img src="../asserts/icons8-up-down-64.png"></th>
-                        <th>Subject <img src="../asserts/icons8-up-down-64.png"></th>
-                        <th>Requested By <img src="../asserts/icons8-up-down-64.png"></th>
-                        <th>Requested Date <img src="../asserts/icons8-up-down-64.png"></th>
-                        <th>Expecting Delivery <img src="../asserts/icons8-up-down-64.png"></th>
-                        <th>Status <img src="../asserts/icons8-up-down-64.png"></th>
+                        <th>Request Id </th>
+                        <th>Subject </th>
+                        <th>Requested By</th>
+                        <th>Requested Date</th>
+                        <th>Expecting Delivery</th>
+                        <th>Status</th>
                         <th>Action </th>
                     </tr>
                 </thead>

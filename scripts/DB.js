@@ -29,7 +29,7 @@ function getItems() {
 async function editItem(editedItem) {
     let data =await getItems();
     const id = editedItem.id;
-    const index = data.findIndex(item => item.id === id);
+    const index = data.findIndex(item => item.id == id);
     console.log(editedItem);
     data[index] = {
         ...data[index], ...editedItem
@@ -55,7 +55,7 @@ async function addRequest(newRequest){
 
 async function deleteRequest(id){
     let data =await getRequests();
-    data = data.filter(request => request.id !== id);
+    data = data.filter(request => request.id != id);
     localStorage.setItem('requestData', JSON.stringify(data));
     deleteRequestItem(id);
 }

@@ -15,8 +15,8 @@ body {
     flex-direction: column;
     flex-grow: 1;
     height: 100vh;
-    padding: 8px;
-    gap: 12px;
+    padding:0px 8px;
+    gap: 4px;
 }
 
 .card {
@@ -26,11 +26,11 @@ body {
 }
 
 .filter-panel {
-    display: flex;
+    display: grid;
     
-    align-items: start;
-    justify-content: space-between;
-    padding: 10px 20px;
+    grid-template-columns: repeat(5, 1fr) auto;
+    align-items: end; 
+    padding: 16px 20px;
     gap: 16px;
     /* background: #000; */
 }
@@ -40,6 +40,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    width: 100%;
 }
 
 .filter-group label {
@@ -86,8 +87,8 @@ body {
 
 .filter-actions {
     display: flex;
-    justify-content: space-evenly;
     gap: 10px;
+    width: 180px;
 }
 
 .filter-btn,
@@ -215,14 +216,14 @@ button:hover img {
 .table-wrapper {
     flex-grow: 1;
     overflow-y: auto;
-    margin: 12px 0;
+    margin: 8px 0 0 0;
     border: 1px solid rgb(241, 244, 255);
     border-radius: 4px;
 }
-
 th {
     top: 0;
     position: sticky;
+    text-align: left;
     z-index: 1;
     background-color: rgb(250, 250, 254);
     color: rgb(32, 32, 99);
@@ -388,3 +389,4 @@ td {
     min-width: 160px;
     /* background: #000; */
 }
+/* /* /* /* /* /* /* /* /* /* /* /* /* /* /* /* ///  */

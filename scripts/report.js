@@ -1,16 +1,14 @@
 document.addEventListener('DOMContentLoaded', async () => {
 
-    const tableBody = document.getElementById('report-data');
     const itemNameField = document.querySelector('.itemNameInput');
     const comboBox = document.querySelector('.combo-list');
     const filterPeriodPanel = document.querySelector('.filter-period');
-    const todayDate = new Date();
     const fromDate = document.getElementById('fromDate');
     const toDate = document.getElementById('toDate');
     const resetBtn = document.querySelector('.reset-btn');
     const filterBtn = document.querySelector('.filter-btn');
     const customBtn = document.querySelector('.custom');
-
+    const excelBtn = document.querySelector('.excel-btn');
 
     let inventoryData = getItems();
     let billItemsData = await getBillItems();
@@ -19,11 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
     inventoryData = inventoryData.sort((a, b) => a.name.localeCompare(b.name));
-
-    const itemNameList = inventoryData.map(item => `
-        <li>${item.name}</li>
-        `).join('');
-
+    const itemNameList = inventoryData.map(item => `<li>${item.name}</li>`).join('');
     comboBox.innerHTML = itemNameList;
 
     itemNameField.addEventListener('click', () => {
@@ -59,136 +53,135 @@ document.addEventListener('DOMContentLoaded', async () => {
             e.target.classList.add('active');
             if (!e.target.closest('.custom'))
                 document.querySelector('.custom-period').classList.add('hidden');
-        }
+            }
     })
 
 
     customBtn.addEventListener('click', () => {
         document.querySelector('.custom-period').classList.remove('hidden');
-    })
+    });
 
-    resetBtn.addEventListener('click', (e) => {
-        itemNameField.value = ''
-        filterPeriodPanel.querySelector('.active').classList.remove('active');
-        filterPeriodPanel.firstElementChild.classList.add('active');
-        document.querySelector('.custom-period').classList.add('hidden');
-        filterBtn.click();
-    })
-
-    // console.log(filterPeriodPanel.firstElementChild);
-
-
-    filterBtn.addEventListener('click', () => {
-
-        const period = document.querySelector('.active').innerText.trim();
-        const name = itemNameField.value;
-
-        const customFrom = fromDate.value;
-        const customTo = toDate.value;
-
+    function salesData(period, name, customFrom, customTo) {
+        const todayDate = new Date();
         const bills = billData.filter(bill => {
             if (period == "Today") {
-                return (new Date(bill.createdAt).toDateString() == todayDate.toDateString());
+                return (new Date(bill.createdAt).toDateString() === todayDate.toDateString());
             }
             if (period == "Yesterday") {
-                return (new Date(bill.createdAt).toDateString() == new Date(todayDate.getTime() - 24 * 60 * 60 * 1000).toDateString());
+                return (new Date(bill.createdAt).toDateString() === new Date(todayDate.getTime() - 24 * 60 * 60 * 1000).toDateString());
             }
             if (period == "This Week") {
                 return (new Date(bill.createdAt) >= new Date(todayDate.getTime() - todayDate.getDay() * 24 * 60 * 60 * 1000));
             }
             if (period == "This Month") {
-                console.log((new Date(bill.createdAt)).getFullYear(), new Date(todayDate).getFullYear(), (new Date(bill.createdAt)).getMonth(), new Date(todayDate).getMonth());
-
-                return ((new Date(bill.createdAt)).getFullYear() == new Date(todayDate).getFullYear() && (new Date(bill.createdAt)).getMonth() == new Date(todayDate).getMonth())
+                return ((new Date(bill.createdAt)).getFullYear() === todayDate.getFullYear() && (new Date(bill.createdAt)).getMonth() === todayDate.getMonth());
             }
-            if (period == "Custom") {
+            if (period == "Custom" && customFrom && customTo) {
+                console.log('hello');
+                
                 const billDate = new Date(bill.createdAt);
                 billDate.setHours(0, 0, 0, 0);
                 return billDate >= new Date(customFrom) && billDate <= new Date(customTo);
             }
+            return true;
         });
+
         const billIds = new Set(bills.map(bill => bill.id));
-        const items = billItemsData.filter(item => {
-            // console.log(item,billIds.has(item.billId) , item.name.includes(name));
-
-            return billIds.has(item.billID) && item.name.includes(name)
+        const filteredItems = billItemsData.filter(item => {
+            return billIds.has(item.billID) && (name == "" || item.name.toLowerCase().includes(name.toLowerCase()));
         });
 
-        console.log(items);
-
-        const salesList = new Map();
-
-        items.forEach(item => {
-
-
-            if (!salesList.has(item.name)) {
-                salesList.set(item.name, {
+        const salesMap = new Map();
+        filteredItems.forEach(item => {
+            if (!salesMap.has(item.name)) {
+                salesMap.set(item.name, {
                     quantity: 0,
                     totalPrice: 0
                 });
             }
-
-            salesList.set(item.name, {
-                quantity: salesList.get(item.name).quantity + parseInt(item.quantity),
-                totalPrice: salesList.get(item.name).totalPrice + parseInt(item.quantity) * parseInt(item.price)
+            const qty = parseInt(item.quantity);
+            const price = parseFloat(item.price);
+            salesMap.set(item.name, {
+                quantity: salesMap.get(item.name).quantity + qty,
+                totalPrice: salesMap.get(item.name).totalPrice + qty * price
             });
         });
 
-
-        console.log('hi', name);
-
-        let tableHTML = "";
-        salesList.forEach((data, name) => {
-            tableHTML += `
-        <tr>
-            <td>${name}</td>
-            <td>${data.quantity}</td>
-            <td>$${data.totalPrice.toFixed(2)}</td>
-        </tr>
-        `;
+        const salesArray = [];
+        salesMap.forEach((data, itemName) => {
+            salesArray.push({
+                name: itemName,
+                quantity: data.quantity,
+                totalPrice: data.totalPrice
+            });
         });
-        tableBody.innerHTML = tableHTML;
 
+        return salesArray;
+    }
+
+    const initialData = salesData("Today", "", "", "");
+    const table = new DataTable('#report-table', {
+        data: initialData,
+        layout: {
+            topStart: null,
+            topEnd: null,
+            bottom: {
+                features: ['pageLength', 'paging', 'info'],
+                className: 'custom-bottom-wrapper'
+            },
+            bottomStart: null,
+            bottomEnd: null
+        },
+        buttons: [
+            {
+                extend: 'excelHtml5',
+                title: 'Sales Report Data',
+                exportOptions: {
+                    format: {
+                        body: function (data) {
+                            if (typeof data === 'string' && data.includes('<')) {
+                                return data.replace(/<\/?[^>]+(>|$)/g, "").trim();
+                            }
+                            return data;
+                        }
+                    }
+                }
+            }
+        ],
+        columns: [
+            { data: 'name' },
+            { data: 'quantity' },
+            { 
+                data: 'totalPrice',
+                render: data => `$${parseFloat(data).toFixed(2)}`
+            }
+        ]
+    });
+
+    excelBtn.addEventListener('click', () => {
+        table.button('.buttons-excel').trigger();
+    });
+
+    resetBtn.addEventListener('click', () => {
+        itemNameField.value = '';
+        filterPeriodPanel.querySelector('.active').classList.remove('active');
+        filterPeriodPanel.firstElementChild.classList.add('active');
+        document.querySelector('.custom-period').classList.add('hidden');
+        filterBtn.click();
+    });
+
+    filterBtn.addEventListener('click', () => {
+        const period = filterPeriodPanel.querySelector('.active').innerText.trim();
+        const name = itemNameField.value;
+        const customFrom = fromDate.value;
+        const customTo = toDate.value;
+
+        const newData = salesData(period, name, customFrom, customTo);
+        table.clear().rows.add(newData).draw();
+    });
+
+    table.on('draw',function(){
+        const count = table.rows({filter:'applied'}).count();
+        document.getElementById('total-count').innerText=`Total ${count} Recorts found`
     })
-
-    const todayBills = billData.filter(bill => {
-        return new Date(bill.createdAt).toDateString() === todayDate.toDateString();
-    });
-
-    const todayBillIds = new Set(todayBills.map(bill => bill.id));
-
-    const todayItems = billItemsData.filter(item => todayBillIds.has(item.billID));
-
-    const sales = new Map();
-
-    todayItems.forEach(item => {
-
-        if (!sales.has(item.name)) {
-            sales.set(item.name, {
-                quantity: 0,
-                totalPrice: 0
-            });
-        }
-
-        sales.set(item.name, {
-            quantity: sales.get(item.name).quantity + parseInt(item.quantity),
-            totalPrice: sales.get(item.name).totalPrice + parseInt(item.quantity) * parseInt(item.price)
-        });
-    });
-
-
-    console.log(todayItems);
-
-    let tableHTML = "";
-    sales.forEach((data, name) => {
-        tableHTML += `
-        <tr>
-            <td>${name}</td>
-            <td>${data.quantity}</td>
-            <td>$${data.totalPrice.toFixed(2)}</td>
-        </tr>
-        `;
-    });
-    tableBody.innerHTML = tableHTML;
-
-})
+});

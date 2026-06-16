@@ -22,8 +22,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     requestedByComboList.innerHTML = uniqueRequestedBy.map(name => `<li>${name}</li>`).join('');
 
 
-
-
     const table = new DataTable('#request-table', {
         data: data,
         layout: {
@@ -273,6 +271,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     addBtn.addEventListener('click', () => {
         window.location.href = "addRequest.html";
     });
+    table.on('draw',function(){
+        const count = table.rows({filter:'applied'}).count();
+        document.getElementById('total-count').innerText=`Total ${count} Request found`
+    })
 
     // filterBtn.click();
 });

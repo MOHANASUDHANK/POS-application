@@ -114,7 +114,7 @@ body {
     gap:16px
 }
 .custom-period input{
-    width: 230px;
+    /* width: 100%; */
     color:  rgba(0, 0, 0, 0.657);
 }
 
