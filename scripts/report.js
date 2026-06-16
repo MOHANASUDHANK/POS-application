@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const filterBtn = document.querySelector('.filter-btn');
     const customBtn = document.querySelector('.custom');
     const excelBtn = document.querySelector('.excel-btn');
+    const globalSearch = document.getElementById('global-search');
 
     let inventoryData = getItems();
     let billItemsData = await getBillItems();
@@ -183,5 +184,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     table.on('draw',function(){
         const count = table.rows({filter:'applied'}).count();
         document.getElementById('total-count').innerText=`Total ${count} Recorts found`
+    })
+    globalSearch.addEventListener('input',(e)=>{
+        table.search(e.target.value).draw();
     })
 });

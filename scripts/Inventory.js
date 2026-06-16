@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const resetBtn = document.querySelector('.reset-btn');
     const excelBtn = document.querySelector('.excel-btn');
     const lengthSelect = document.querySelector('.left-container select');
+    const globalSearch = document.getElementById('global-search');
 
     let data = getItems();
 
@@ -162,6 +163,10 @@ document.addEventListener("DOMContentLoaded", () => {
     excelBtn.addEventListener('click', () => {
         table.button('.buttons-excel').trigger();
     });
+
+    globalSearch.addEventListener('input',(e)=>{
+        table.search(e.target.value).draw();
+    })
 
     filterBtn.click();
 });

@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const excelBtn = document.querySelector('.excel-btn');
     const filterBtn = document.querySelector('.filter-btn');
     const resetBtn = document.querySelector('.reset-btn');
+    const globalSearch = document.getElementById('global-search');
 
     let data = await getRequests();
 
@@ -275,6 +276,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         const count = table.rows({filter:'applied'}).count();
         document.getElementById('total-count').innerText=`Total ${count} Request found`
     })
-
-    // filterBtn.click();
+globalSearch.addEventListener('input',(e)=>{
+        table.search(e.target.value).draw();
+    })
+    filterBtn.click();
 });
